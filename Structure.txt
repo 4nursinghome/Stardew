@@ -1,4 +1,3 @@
-# -
 簡單的架構長這樣
 [DialogueScene] →（change_scene_to_file）
     ↓

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dewvrgikbeavu"]
+
+[ext_resource type="Texture2D" uid="uid://b5hngevegliyy" path="res://sprites/plants/cabbage.png" id="1_danii"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_wg7oe"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/HarvestParticles.tscn" id="3_dmdkg"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_dmdkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egsj4"]
+radius = 41.0122
+
+[node name="cabbage" type="Node2D"]
+
+[node name="cabbage" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_danii")
+hframes = 3
+script = ExtResource("2_wg7oe")
+grow_times = 4.0
+
+[node name="HarvestParticles" parent="." instance=ExtResource("3_dmdkg")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_dmdkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -33)
+shape = SubResource("CircleShape2D_egsj4")

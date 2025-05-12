@@ -1,0 +1,74 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cqem6knyvl25y"]
+
+[ext_resource type="Texture2D" uid="uid://y4pl5m2umxlh" path="res://sprites/plants/plant_icon.PNG" id="1_kraxc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ney8v"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(168, 11, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4oqc"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(325, 335, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y52w"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(168, 173, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl6ow"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(11, 335, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmugl"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(168, 335, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ojo"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(325, 173, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrdlk"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(11, 11, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saal0"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(11, 173, 157, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq76t"]
+atlas = ExtResource("1_kraxc")
+region = Rect2(325, 11, 157, 162)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ney8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4oqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y52w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl6ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmugl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60ojo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrdlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saal0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq76t")
+}],
+"loop": true,
+"name": &"plants",
+"speed": 5.0
+}]

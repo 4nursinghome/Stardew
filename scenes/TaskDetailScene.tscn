@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://rgmkioplbf4c"]
+
+[ext_resource type="Texture2D" uid="uid://bdt20gs8lwqe7" path="res://assets/卷軸.png" id="1_fhiji"]
+[ext_resource type="Texture2D" uid="uid://bx11h0x3wosvm" path="res://assets/領取.png" id="2_pjdhi"]
+[ext_resource type="Texture2D" uid="uid://dcflpkrdgnun3" path="res://assets/回到布告欄縮圖 (2).png" id="3_17ul1"]
+[ext_resource type="Script" uid="uid://betrpyatpod3y" path="res://scenes/back_button.gd" id="4_3vxt0"]
+[ext_resource type="Texture2D" uid="uid://cpe3dac22yw6t" path="res://assets/離開縮圖 (2).png" id="5_3vxt0"]
+[ext_resource type="Script" uid="uid://crmk6viempe5n" path="res://scenes/quit_button.gd" id="6_uqaq2"]
+
+[node name="TaskDetailScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -54.0
+offset_right = 1162.0
+offset_bottom = 1680.0
+texture = ExtResource("1_fhiji")
+
+[node name="TaskDescLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 400.0
+offset_right = 872.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 80
+text = "任務描述"
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 1088.0
+offset_right = 920.0
+offset_bottom = 1168.0
+text = "3/5
+"
+
+[node name="ClaimButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 1120.0
+offset_right = 1440.0
+offset_bottom = 2144.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_pjdhi")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = -11.0
+offset_right = 504.0
+offset_bottom = 245.0
+texture_normal = ExtResource("3_17ul1")
+stretch_mode = 0
+script = ExtResource("4_3vxt0")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -8.0
+offset_right = 232.0
+offset_bottom = 248.0
+texture_normal = ExtResource("5_3vxt0")
+stretch_mode = 0
+script = ExtResource("6_uqaq2")

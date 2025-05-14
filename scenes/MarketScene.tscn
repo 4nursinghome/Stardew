@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://c56afwi6smbbn"]
+
+[ext_resource type="Script" uid="uid://b40qqsug8ufy" path="res://scenes/market_scene.gd" id="1_r4v8e"]
+[ext_resource type="Texture2D" uid="uid://epg8v2dkqocq" path="res://assets/市場趨勢底圖之一.png" id="2_a1ju4"]
+[ext_resource type="Texture2D" uid="uid://bbn0b6akw3a0e" path="res://assets/背景底圖.png" id="2_kqjgc"]
+[ext_resource type="Texture2D" uid="uid://cpe3dac22yw6t" path="res://assets/離開縮圖 (2).png" id="4_10ax6"]
+[ext_resource type="Texture2D" uid="uid://dcflpkrdgnun3" path="res://assets/回到布告欄縮圖 (2).png" id="5_uo8es"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4v8e")
+
+[node name="背景圖" type="Sprite2D" parent="."]
+position = Vector2(548, 764)
+scale = Vector2(1.17969, 1.02604)
+texture = ExtResource("2_kqjgc")
+
+[node name="市場趨勢布告欄" type="Sprite2D" parent="."]
+position = Vector2(520, 848)
+scale = Vector2(0.921875, 0.916667)
+texture = ExtResource("2_a1ju4")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_top = 0.074
+anchor_right = 0.944
+anchor_bottom = 0.344
+offset_left = 13.08
+offset_top = 208.12
+offset_right = 116.48
+offset_bottom = -54.28
+theme_override_colors/font_color = Color(0.396185, 0.168656, 0.0505572, 1)
+theme_override_font_sizes/font_size = 100
+text = "本日市場"
+
+[node name="PriceLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 464.0
+offset_right = 552.0
+offset_bottom = 717.0
+theme_override_colors/font_color = Color(0.618935, 0.207082, 0.172157, 1)
+theme_override_font_sizes/font_size = 64
+text = "\" \""
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -48.0
+offset_right = 80.0
+offset_bottom = -8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.015
+anchor_right = 0.215
+anchor_bottom = 0.158
+offset_left = 32.2
+offset_top = 2.0
+offset_right = 39.8
+offset_bottom = 262.04
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "返回"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "離開"
+
+[node name="QuitButton_pic" type="TextureButton" parent="."]
+layout_mode = 2
+anchor_bottom = 0.084
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 248.0
+offset_bottom = 95.92
+texture_normal = ExtResource("4_10ax6")
+stretch_mode = 0
+
+[node name="BackButton_pic" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 280.0
+offset_top = -24.0
+offset_right = 536.0
+offset_bottom = 232.0
+texture_normal = ExtResource("5_uo8es")
+stretch_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitButton_pic" to="." method="_on_quit_button_pic_pressed"]
+[connection signal="pressed" from="BackButton_pic" to="." method="_on_back_button_pic_pressed"]

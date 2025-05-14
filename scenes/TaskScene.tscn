@@ -1,0 +1,229 @@
+[gd_scene load_steps=9 format=3 uid="uid://s8du5lcibl2t"]
+
+[ext_resource type="Script" uid="uid://bwu7iucp707t8" path="res://scenes/task_scene.gd" id="1_miwrg"]
+[ext_resource type="Texture2D" uid="uid://c0jkwxfva6v4j" path="res://assets/任務底圖.png" id="2_kxowd"]
+[ext_resource type="Texture2D" uid="uid://dcflpkrdgnun3" path="res://assets/回到布告欄縮圖 (2).png" id="3_uxak6"]
+[ext_resource type="Script" uid="uid://betrpyatpod3y" path="res://scenes/back_button.gd" id="4_gutmt"]
+[ext_resource type="Texture2D" uid="uid://cpe3dac22yw6t" path="res://assets/離開縮圖 (2).png" id="5_7w1kq"]
+[ext_resource type="Script" uid="uid://crmk6viempe5n" path="res://scenes/quit_button.gd" id="6_p4jqa"]
+[ext_resource type="Texture2D" uid="uid://dhnucbno7t6iu" path="res://assets/任務圖示.png" id="7_gutmt"]
+[ext_resource type="Texture2D" uid="uid://bx11h0x3wosvm" path="res://assets/領取.png" id="8_7w1kq"]
+
+[node name="TaskScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_miwrg")
+
+[node name="TaskDescLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RewardLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SubmitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1104.0
+offset_bottom = 1648.0
+texture = ExtResource("2_kxowd")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 3.0
+offset_right = 536.0
+offset_bottom = 259.0
+texture_normal = ExtResource("3_uxak6")
+script = ExtResource("4_gutmt")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 272.0
+offset_bottom = 254.0
+texture_normal = ExtResource("5_7w1kq")
+stretch_mode = 0
+script = ExtResource("6_p4jqa")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 288.0
+offset_right = 624.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0.396722, 0.169124, 0.138925, 1)
+theme_override_font_sizes/font_size = 100
+text = "任務"
+
+[node name="Task_3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Task_3"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 894.0
+offset_right = 1478.0
+offset_bottom = 1918.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_gutmt")
+
+[node name="Label" type="Label" parent="Task_3"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 1208.0
+offset_right = 672.0
+offset_bottom = 1431.0
+theme_override_font_sizes/font_size = 80
+text = "Task 3
+"
+
+[node name="Req_Label" type="Label" parent="Task_3"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 1304.0
+offset_right = 592.0
+offset_bottom = 1527.0
+theme_override_font_sizes/font_size = 60
+text = "REQ"
+
+[node name="Reward_Label" type="Label" parent="Task_3"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 1304.0
+offset_right = 773.0
+offset_bottom = 1527.0
+theme_override_colors/font_color = Color(0.512695, 0.58576, 0.93355, 1)
+theme_override_font_sizes/font_size = 60
+text = "REW"
+
+[node name="Task_2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Task_2"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 520.0
+offset_right = 1476.0
+offset_bottom = 1544.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_gutmt")
+
+[node name="Label" type="Label" parent="Task_2"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 816.0
+offset_right = 728.0
+offset_bottom = 1039.0
+theme_override_font_sizes/font_size = 80
+text = "Task 2
+"
+
+[node name="Req_Label" type="Label" parent="Task_2"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 922.0
+offset_right = 542.0
+offset_bottom = 1145.0
+theme_override_font_sizes/font_size = 60
+text = "REQ"
+
+[node name="Reward_Label" type="Label" parent="Task_2"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 920.0
+offset_right = 723.0
+offset_bottom = 1143.0
+theme_override_colors/font_color = Color(0.513726, 0.584314, 0.933333, 1)
+theme_override_font_sizes/font_size = 60
+text = "REW"
+
+[node name="Task_1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Task_1"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 168.0
+offset_right = 1440.0
+offset_bottom = 1192.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_gutmt")
+
+[node name="Label" type="Label" parent="Task_1"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 472.0
+offset_right = 728.0
+offset_bottom = 688.0
+theme_override_font_sizes/font_size = 80
+text = "Task1"
+
+[node name="Req_Label" type="Label" parent="Task_1"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 584.0
+offset_right = 544.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 60
+text = "REQ"
+
+[node name="Reward_Label" type="Label" parent="Task_1"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 588.0
+offset_right = 732.0
+offset_bottom = 732.0
+theme_override_colors/font_color = Color(0.513726, 0.584314, 0.933333, 1)
+theme_override_font_sizes/font_size = 60
+text = "REW"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 472.0
+offset_right = 1781.0
+offset_bottom = 1496.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_7w1kq")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 840.0
+offset_right = 1776.0
+offset_bottom = 1864.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_7w1kq")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 1200.0
+offset_right = 1776.0
+offset_bottom = 2224.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_7w1kq")
+stretch_mode = 0

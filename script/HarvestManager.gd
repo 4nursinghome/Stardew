@@ -12,7 +12,7 @@ var icon_index := {
 	"corn": 4,
 	"pumpkin": 5,
 	"onion": 6,
-	"broccoli": 7,
+	"brocoli": 7,
 	"cat": 8
 }
 

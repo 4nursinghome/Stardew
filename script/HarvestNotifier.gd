@@ -9,18 +9,16 @@ const MAX_STACK := 4
 var count := 1
 var tween: Tween = null
 
-#func setup(_crop: String, icon_tex: Texture2D):
-	#count = 1
-	#icon.texture = icon_tex
-	#label.text = "x1"
-	#self.modulate.a = 1.0
 func setup(_crop: String, icon_tex: Texture2D):
 	count = 1
-	print("✅ setup 被呼叫")
 	icon.texture = icon_tex
 	label.text = "x1"
 	self.modulate.a = 1.0
-	self.global_position = Vector2(100, 100)  
+	var screen_size = get_viewport_rect().size
+	self.global_position = Vector2(screen_size.x - self.size.x - 20, 40)  # 右上角
+
+
+	  
 
 func add_stack():
 	if count < MAX_STACK:

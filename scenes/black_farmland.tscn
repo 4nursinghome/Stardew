@@ -22,6 +22,15 @@ texture = ExtResource("2_2muvu")
 position = Vector2(0, -7)
 texture = ExtResource("3_mnxek")
 
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = -26.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2muvu")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y4pl5m2umxlh"
-path="res://.godot/imported/plant_icon.PNG-4809a0b1e11298c28d095cb9ade057db.ctex"
+uid="uid://crw4r63ridfrk"
+path="res://.godot/imported/plant_icon.PNG-42371d1653bf68f553eae82af0d11b7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/plants/plant_icon.PNG"
-dest_files=["res://.godot/imported/plant_icon.PNG-4809a0b1e11298c28d095cb9ade057db.ctex"]
+source_file="res://sprites/farmland/plant_icon.PNG"
+dest_files=["res://.godot/imported/plant_icon.PNG-42371d1653bf68f553eae82af0d11b7d.ctex"]
 
 [params]
 

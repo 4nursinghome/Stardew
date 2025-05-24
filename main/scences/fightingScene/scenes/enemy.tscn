@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cixltfcbe6r6a"]
+
+[ext_resource type="Script" uid="uid://drtqhslmv3ts0" path="res://scenes/fightingScene/scenes/enemy.gd" id="1_iifgy"]
+[ext_resource type="Texture2D" uid="uid://bermmfhmpx75k" path="res://scenes/fightingScene/char2.png" id="1_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://deoy72omc87nm" path="res://scenes/fightingScene/enemy_die.png" id="2_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://dov81mex54wro" path="res://scenes/fightingScene/char2_throw2.png" id="2_iifgy"]
+[ext_resource type="Texture2D" uid="uid://cm2udv0xnjiwn" path="res://scenes/fightingScene/char2_throw1.png" id="3_epg4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_c4w8v")
+region = Rect2(0, 0, 341, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("2_c4w8v")
+region = Rect2(341, 0, 341, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
+atlas = ExtResource("2_c4w8v")
+region = Rect2(682, 0, 341, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yqyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md484")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qi2p4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qi2p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iifgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_epg4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qi2p4")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wujgv"]
+radius = 52.0
+height = 158.0
+
+[node name="enemy" type="Area2D"]
+script = ExtResource("1_iifgy")
+metadata/_edit_group_ = true
+
+[node name="enemyAnimation" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_3yqyl")
+animation = &"die"
+flip_h = true
+
+[node name="enemyBody" type="CollisionShape2D" parent="."]
+position = Vector2(1, 10)
+shape = SubResource("CapsuleShape2D_wujgv")

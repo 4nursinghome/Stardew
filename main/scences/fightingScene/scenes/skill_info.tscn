@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb0ohjdwk6gfh"]
+
+[ext_resource type="Script" uid="uid://od6q4jg6vlrh" path="res://scenes/fightingScene/scenes/skill_info.gd" id="1_h0f6h"]
+
+[node name="skillInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0f6h")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 60.0
+offset_top = 92.0
+offset_right = 980.0
+offset_bottom = 1535.0
+
+[node name="skillName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 153.0
+offset_right = 803.0
+offset_bottom = 267.0
+
+[node name="skillStatsInfo" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 328.0
+offset_right = 866.0
+offset_bottom = 982.0
+
+[node name="upgrade" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 1136.0
+offset_right = 766.0
+offset_bottom = 1260.0
+
+[node name="cancel" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 1140.0
+offset_right = 382.0
+offset_bottom = 1262.0

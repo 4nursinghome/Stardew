@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://dynbeo5j5bg6o"]
+
+[ext_resource type="Texture2D" uid="uid://khag8siuml2k" path="res://scenes/fightingScene/skill1.jpg" id="1_uo23l"]
+[ext_resource type="Texture2D" uid="uid://2pip0yveo76s" path="res://scenes/fightingScene/chi.png" id="2_g40q5"]
+[ext_resource type="Texture2D" uid="uid://bmas7ehc0hv82" path="res://scenes/fightingScene/ultimate.png" id="3_d01xi"]
+[ext_resource type="Texture2D" uid="uid://de2uep2l2g4hd" path="res://scenes/fightingScene/ChatGPT Image 2025年4月26日 下午01_48_19.png" id="4_ieniw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xqjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uo23l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfps1"]
+radius = 68.7314
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2mtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g40q5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3fe0"]
+radius = 67.0671
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_als1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d01xi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qnph3"]
+radius = 59.4138
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcmog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ieniw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sy43"]
+radius = 56.7539
+
+[node name="skillUpgradePlacement" type="Control"]
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skill1" type="Area2D" parent="."]
+
+[node name="skill1Animation" type="AnimatedSprite2D" parent="skill1"]
+position = Vector2(192.25, 216.48)
+scale = Vector2(0.117796, 0.119678)
+sprite_frames = SubResource("SpriteFrames_4xqjv")
+
+[node name="skill1Collision" type="CollisionShape2D" parent="skill1"]
+position = Vector2(193, 219)
+shape = SubResource("CircleShape2D_vfps1")
+
+[node name="skill2" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="skill2Animation" type="AnimatedSprite2D" parent="skill2"]
+position = Vector2(863.25, 215.25)
+scale = Vector2(0.11377, 0.11377)
+sprite_frames = SubResource("SpriteFrames_i2mtf")
+
+[node name="skill2Collision" type="CollisionShape2D" parent="skill2"]
+position = Vector2(864.25, 214.25)
+shape = SubResource("CircleShape2D_j3fe0")
+
+[node name="ULT" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="ULTAnimation" type="AnimatedSprite2D" parent="ULT"]
+position = Vector2(191.809, 1395.75)
+scale = Vector2(0.118583, 0.118583)
+sprite_frames = SubResource("SpriteFrames_als1h")
+
+[node name="ULTCollision" type="CollisionShape2D" parent="ULT"]
+position = Vector2(192.809, 1395.75)
+shape = SubResource("CircleShape2D_qnph3")
+
+[node name="special" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="specialAnimation" type="AnimatedSprite2D" parent="special"]
+position = Vector2(852.5, 1385.5)
+scale = Vector2(0.0927734, 0.0927734)
+sprite_frames = SubResource("SpriteFrames_vcmog")
+
+[node name="specialCollision" type="CollisionShape2D" parent="special"]
+position = Vector2(852.5, 1387.5)
+shape = SubResource("CircleShape2D_2sy43")

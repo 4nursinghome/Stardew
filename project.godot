@@ -20,6 +20,8 @@ config/icon="res://圖片素材/icon.svg"
 GlobalBGM="*res://scenes/GlobalBGM.tscn"
 GlobalInventory="*res://Global/GlobalInventory.gd"
 GlobalTask="*res://Global/GlobalTask.gd"
+GlobalProperty="*res://Global/GlobalProperty.gd"
+StoreStage="*res://Global/StoreStage.gd"
 
 [display]
 

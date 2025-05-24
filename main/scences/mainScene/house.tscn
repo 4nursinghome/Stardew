@@ -1,0 +1,138 @@
+[gd_scene load_steps=24 format=3 uid="uid://ca8rbd2umbk01"]
+
+[ext_resource type="Texture2D" uid="uid://2i4sup0ougaw" path="res://house/building 001.png" id="1_abp1d"]
+[ext_resource type="Script" uid="uid://ci1crrwd44v1t" path="res://scenes/mainScene/house.gd" id="1_i3b8e"]
+[ext_resource type="Script" uid="uid://dohe7btqvupj7" path="res://scenes/mainScene/building_001.gd" id="2_hdpf4"]
+[ext_resource type="Texture2D" uid="uid://c81kc7bj5ddja" path="res://house/building 002.png" id="3_hdpf4"]
+[ext_resource type="Script" uid="uid://dg2q13asi1mus" path="res://scenes/mainScene/building_002.gd" id="4_27gj4"]
+[ext_resource type="Texture2D" uid="uid://05bqllv6gco1" path="res://house/building 003.png" id="4_jw1rt"]
+[ext_resource type="Texture2D" uid="uid://bh4etwlmf0kei" path="res://house/building 004.png" id="5_27gj4"]
+[ext_resource type="Script" uid="uid://qb6dlv81j4ds" path="res://scenes/mainScene/building_003.gd" id="6_bh034"]
+[ext_resource type="Texture2D" uid="uid://3tm3anxl8nrr" path="res://house/building 005.png" id="6_jcqqc"]
+[ext_resource type="Texture2D" uid="uid://g7onr35gjvfg" path="res://house/building 006.png" id="7_bh034"]
+[ext_resource type="Script" uid="uid://bwrppd27etnd6" path="res://scenes/mainScene/building_004.gd" id="8_h2qkl"]
+[ext_resource type="Texture2D" uid="uid://dnk3yfy7erihb" path="res://house/building 007.png" id="8_mfpae"]
+[ext_resource type="Texture2D" uid="uid://crub6yjke2vdi" path="res://house/building 008.png" id="9_h2qkl"]
+[ext_resource type="Texture2D" uid="uid://cv57c4uxieb7t" path="res://house/building 009.png" id="10_fbhrb"]
+[ext_resource type="Texture2D" uid="uid://bg8dej8ongwic" path="res://house/building 010.png" id="11_jkics"]
+[ext_resource type="Texture2D" uid="uid://d4fk6pa3aicic" path="res://house/building 011.png" id="12_b1oeo"]
+[ext_resource type="Texture2D" uid="uid://d272t0f5tio0l" path="res://house/building 012.png" id="13_5q0f0"]
+[ext_resource type="Texture2D" uid="uid://bb3op288dq4rd" path="res://house/building 013.png" id="14_tutw5"]
+[ext_resource type="Texture2D" uid="uid://derv0vxppb55w" path="res://house/building 014.png" id="15_ek358"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kontj"]
+size = Vector2(210.5, 206.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptp2n"]
+size = Vector2(466.667, 325.687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qde0x"]
+size = Vector2(209.5, 203.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic41n"]
+size = Vector2(208.5, 202.5)
+
+[node name="house" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i3b8e")
+
+[node name="Building001" type="Area2D" parent="."]
+script = ExtResource("2_hdpf4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building001"]
+position = Vector2(669.75, 1193.75)
+shape = SubResource("RectangleShape2D_kontj")
+
+[node name="building001" type="Sprite2D" parent="Building001"]
+position = Vector2(669.5, 1192.5)
+scale = Vector2(0.458, 0.554)
+texture = ExtResource("1_abp1d")
+
+[node name="Building002" type="Area2D" parent="."]
+script = ExtResource("4_27gj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building002"]
+position = Vector2(927, 1194.06)
+scale = Vector2(0.45, 0.626)
+shape = SubResource("RectangleShape2D_ptp2n")
+
+[node name="building002" type="Sprite2D" parent="Building002"]
+position = Vector2(927.5, 1177.5)
+scale = Vector2(0.45, 0.626)
+texture = ExtResource("3_hdpf4")
+
+[node name="Building003" type="Area2D" parent="."]
+script = ExtResource("6_bh034")
+
+[node name="building003" type="Sprite2D" parent="Building003"]
+position = Vector2(152, 940)
+scale = Vector2(0.468, 0.528)
+texture = ExtResource("4_jw1rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building003"]
+position = Vector2(152.25, 940.25)
+shape = SubResource("RectangleShape2D_qde0x")
+
+[node name="Building004" type="Area2D" parent="."]
+script = ExtResource("8_h2qkl")
+
+[node name="building004" type="Sprite2D" parent="Building004"]
+position = Vector2(411, 943)
+scale = Vector2(0.592, 0.416)
+texture = ExtResource("5_27gj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building004"]
+position = Vector2(411.25, 941.25)
+shape = SubResource("RectangleShape2D_ic41n")
+
+[node name="Building005" type="Sprite2D" parent="."]
+position = Vector2(668.5, 906)
+scale = Vector2(0.466, 0.644)
+texture = ExtResource("6_jcqqc")
+
+[node name="Building006" type="Sprite2D" parent="."]
+position = Vector2(929, 943)
+scale = Vector2(0.592, 0.416)
+texture = ExtResource("7_bh034")
+
+[node name="Building007" type="Sprite2D" parent="."]
+position = Vector2(152.5, 694)
+scale = Vector2(0.474, 0.5)
+texture = ExtResource("8_mfpae")
+
+[node name="Building008" type="Sprite2D" parent="."]
+position = Vector2(411, 689)
+scale = Vector2(0.476, 0.58)
+texture = ExtResource("9_h2qkl")
+
+[node name="Building009" type="Sprite2D" parent="."]
+position = Vector2(668.5, 691.5)
+scale = Vector2(0.466, 0.518)
+texture = ExtResource("10_fbhrb")
+
+[node name="Building010" type="Sprite2D" parent="."]
+position = Vector2(928.5, 677)
+scale = Vector2(0.518, 0.684)
+texture = ExtResource("11_jkics")
+
+[node name="Building011" type="Sprite2D" parent="."]
+position = Vector2(153.5, 422)
+scale = Vector2(0.49, 0.632)
+texture = ExtResource("12_b1oeo")
+
+[node name="Building012" type="Sprite2D" parent="."]
+position = Vector2(411.5, 438)
+scale = Vector2(0.53, 0.508)
+texture = ExtResource("13_5q0f0")
+
+[node name="Building013" type="Sprite2D" parent="."]
+position = Vector2(669.5, 436.5)
+scale = Vector2(0.586, 0.53)
+texture = ExtResource("14_tutw5")
+
+[node name="Building014" type="Sprite2D" parent="."]
+position = Vector2(926.5, 445.5)
+scale = Vector2(0.466, 0.598)
+texture = ExtResource("15_ek358")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmfl352w7ad53"]
+
+[ext_resource type="Texture2D" uid="uid://7xqv1icr5qum" path="res://background/coin_board.PNG" id="1_qp5bd"]
+[ext_resource type="Texture2D" uid="uid://dwqi7txwcuie1" path="res://background/heart.png" id="2_tcxqd"]
+
+[node name="mainPageIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coin" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 137.0
+offset_right = 385.0
+offset_bottom = 311.0
+
+[node name="CoinBoard" type="TextureRect" parent="coin"]
+layout_mode = 2
+texture = ExtResource("1_qp5bd")
+
+[node name="Label" type="Label" parent="coin"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart001" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(960, 85)
+texture = ExtResource("2_tcxqd")
+
+[node name="Heart002" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(870, 85)
+texture = ExtResource("2_tcxqd")
+
+[node name="Heart003" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(780, 85)
+texture = ExtResource("2_tcxqd")
+
+[node name="Heart004" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(690, 85)
+texture = ExtResource("2_tcxqd")
+
+[node name="Heart005" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(600, 85)
+texture = ExtResource("2_tcxqd")

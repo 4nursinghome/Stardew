@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://brdks3clq5d2f"]
+
+[ext_resource type="Script" uid="uid://cejomuh0v422v" path="res://scenes/mainScene/main_page.gd" id="1_v18h2"]
+[ext_resource type="Texture2D" uid="uid://c20piq4q21hg6" path="res://background/main.png" id="1_xktlv"]
+[ext_resource type="Texture2D" uid="uid://70ml5qjmytcf" path="res://house/personal.png" id="2_m0ry0"]
+[ext_resource type="Texture2D" uid="uid://cx6fpvan7drk2" path="res://house/storage.png" id="3_8gku1"]
+[ext_resource type="PackedScene" uid="uid://ca8rbd2umbk01" path="res://scenes/mainScene/house.tscn" id="4_j0msa"]
+[ext_resource type="PackedScene" uid="uid://5x3js6en5gl3" path="res://scenes/mainScene/h_road.tscn" id="5_v18h2"]
+[ext_resource type="PackedScene" uid="uid://dyuou2ijtvjuo" path="res://scenes/mainScene/s_road.tscn" id="6_hte70"]
+[ext_resource type="PackedScene" uid="uid://cbcay5t2kitoo" path="res://scenes/mainScene/button.tscn" id="7_jhjir"]
+[ext_resource type="PackedScene" uid="uid://cmfl352w7ad53" path="res://scenes/mainScene/icon.tscn" id="8_j4pdi"]
+
+[node name="mainPage" type="Node2D"]
+script = ExtResource("1_v18h2")
+metadata/_edit_group_ = true
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="background001" type="Sprite2D" parent="background"]
+position = Vector2(540, 765.5)
+scale = Vector2(1, 0.996745)
+texture = ExtResource("1_xktlv")
+
+[node name="Personal" type="Sprite2D" parent="."]
+position = Vector2(152, 1203)
+scale = Vector2(1.12, 1.1)
+texture = ExtResource("2_m0ry0")
+
+[node name="Storage" type="Sprite2D" parent="."]
+position = Vector2(410.5, 1203.5)
+scale = Vector2(1.145, 1.095)
+texture = ExtResource("3_8gku1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 764)
+limit_left = 0
+limit_top = 0
+limit_right = 1080
+limit_bottom = 1536
+
+[node name="house" parent="." instance=ExtResource("4_j0msa")]
+
+[node name="h_road" parent="." instance=ExtResource("5_v18h2")]
+
+[node name="s_road" parent="." instance=ExtResource("6_hte70")]
+
+[node name="button" parent="." instance=ExtResource("7_jhjir")]
+mouse_filter = 1
+
+[node name="mainPageIcon" parent="." instance=ExtResource("8_j4pdi")]
+mouse_filter = 2

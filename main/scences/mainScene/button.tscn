@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbcay5t2kitoo"]
+
+[ext_resource type="Texture2D" uid="uid://dyx37b6olm13" path="res://background/icon_skill.PNG" id="1_mu1bs"]
+[ext_resource type="Texture2D" uid="uid://doppapaqe70rb" path="res://background/icon_missing_board.PNG" id="2_plx7c"]
+[ext_resource type="Script" uid="uid://cdchjgwg5br86" path="res://scenes/mainScene/farmButton.gd" id="3_5ivi6"]
+[ext_resource type="Texture2D" uid="uid://dqlasijilps0f" path="res://background/icon_farm.PNG" id="4_wh8lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmtiu"]
+size = Vector2(268, 119)
+
+[node name="mainPagebutton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="skill" type="Sprite2D" parent="."]
+position = Vector2(870, 1420)
+texture = ExtResource("1_mu1bs")
+
+[node name="missingboard" type="Sprite2D" parent="."]
+position = Vector2(540, 1421)
+texture = ExtResource("2_plx7c")
+
+[node name="farmButton" type="Area2D" parent="."]
+script = ExtResource("3_5ivi6")
+
+[node name="farm" type="Sprite2D" parent="farmButton"]
+position = Vector2(210, 1420)
+texture = ExtResource("4_wh8lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="farmButton"]
+position = Vector2(210, 1420.5)
+shape = SubResource("RectangleShape2D_wmtiu")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://h3itm3gdjkdw"]
+
+[ext_resource type="Texture2D" uid="uid://bkws525tnlnx5" path="res://sprites/plants/beet.png" id="1_r3b10"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_a17i5"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/HarvestParticles.tscn" id="3_k2eeb"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_v10fw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tu6v2"]
+radius = 56.0
+height = 244.0
+
+[node name="beet" type="Node2D"]
+
+[node name="beet" type="Sprite2D" parent="."]
+position = Vector2(10, -60)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_r3b10")
+hframes = 3
+script = ExtResource("2_a17i5")
+
+[node name="HarvestParticles" parent="." instance=ExtResource("3_k2eeb")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+position = Vector2(10, -60)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_v10fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-4, 0)
+shape = SubResource("CapsuleShape2D_tu6v2")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp7f0ldqm6dhq"]
+
+[ext_resource type="Texture2D" uid="uid://3c8jyn2wbn3i" path="res://sprites/plants/cat.PNG" id="1_7vi38"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_cxap7"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/HarvestParticles.tscn" id="3_tol8a"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_o55mh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vi38"]
+size = Vector2(66.5, 85)
+
+[node name="cat" type="Node2D"]
+
+[node name="cat" type="Sprite2D" parent="."]
+position = Vector2(0, -46)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7vi38")
+hframes = 3
+script = ExtResource("2_cxap7")
+grow_times = 11.0
+auto_grow = false
+
+[node name="HarvestParticles" parent="." instance=ExtResource("3_tol8a")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_o55mh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-0.25, -36)
+shape = SubResource("RectangleShape2D_7vi38")

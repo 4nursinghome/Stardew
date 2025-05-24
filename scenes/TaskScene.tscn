@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://s8du5lcibl2t"]
+[gd_scene load_steps=10 format=3 uid="uid://s8du5lcibl2t"]
 
 [ext_resource type="Script" uid="uid://bwu7iucp707t8" path="res://scenes/task_scene.gd" id="1_miwrg"]
 [ext_resource type="Texture2D" uid="uid://c0jkwxfva6v4j" path="res://assets/任務底圖.png" id="2_kxowd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://crmk6viempe5n" path="res://scenes/quit_button.gd" id="6_p4jqa"]
 [ext_resource type="Texture2D" uid="uid://dhnucbno7t6iu" path="res://assets/任務圖示.png" id="7_gutmt"]
 [ext_resource type="Texture2D" uid="uid://bx11h0x3wosvm" path="res://assets/領取.png" id="8_7w1kq"]
+[ext_resource type="Texture2D" uid="uid://eml4bkdcp6kr" path="res://assets/coin_icon_128x128.png" id="9_p4jqa"]
 
 [node name="TaskScene" type="Control"]
 layout_mode = 3
@@ -163,9 +164,9 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Task_1"]
 layout_mode = 0
-offset_left = -96.0
+offset_left = -64.0
 offset_top = 168.0
-offset_right = 1440.0
+offset_right = 1472.0
 offset_bottom = 1192.0
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_gutmt")
@@ -227,3 +228,26 @@ offset_bottom = 2224.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("8_7w1kq")
 stretch_mode = 0
+
+[node name="Coin" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureCoin" type="TextureRect" parent="Coin"]
+layout_mode = 0
+offset_left = 880.0
+offset_top = -8.0
+offset_right = 1008.0
+offset_bottom = 120.0
+texture = ExtResource("9_p4jqa")
+
+[node name="Label" type="Label" parent="Coin"]
+layout_mode = 0
+offset_left = 688.0
+offset_top = -8.0
+offset_right = 779.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(1, 0.807843, 0.211765, 1)
+theme_override_font_sizes/font_size = 80
+text = "10"

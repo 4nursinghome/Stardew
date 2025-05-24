@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcmspvf8ynuqk"]
+
+[ext_resource type="Texture2D" uid="uid://chug0jxmpvkh5" path="res://sprites/farmland/black_farmland.png" id="1_jh8en"]
+[ext_resource type="Texture2D" uid="uid://bc72o21os60cl" path="res://sprites/farmland/lock.PNG" id="2_2muvu"]
+[ext_resource type="Texture2D" uid="uid://ccew38henwi8e" path="res://sprites/farmland/coin2.png" id="3_mnxek"]
+[ext_resource type="Script" uid="uid://didumeqd0mgko" path="res://script/locking.gd" id="4_2muvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2muvu"]
+size = Vector2(74, 72)
+
+[node name="black_farmland" type="Area2D"]
+script = ExtResource("4_2muvu")
+
+[node name="BlackFarmland" type="Sprite2D" parent="."]
+texture = ExtResource("1_jh8en")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("2_2muvu")
+
+[node name="coin2" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("3_mnxek")
+
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = -26.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_2muvu")

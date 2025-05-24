@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://boqbf4vfbaefp"]
+
+[ext_resource type="Texture2D" uid="uid://cl6v7wgkwl7qr" path="res://sprites/plants/pumpkin.png" id="1_f42hk"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/farmScene/HarvestParticles.tscn" id="2_i4gw2"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_pq60l"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_cq8q5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pq60l"]
+radius = 41.0122
+
+[node name="pumpkin" type="Node2D"]
+
+[node name="pumpkin" type="Sprite2D" parent="."]
+position = Vector2(0, -46)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_f42hk")
+hframes = 3
+script = ExtResource("2_pq60l")
+grow_times = 8.0
+auto_grow = false
+
+[node name="HarvestParticles" parent="." instance=ExtResource("2_i4gw2")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_cq8q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-1, -38)
+shape = SubResource("CircleShape2D_pq60l")

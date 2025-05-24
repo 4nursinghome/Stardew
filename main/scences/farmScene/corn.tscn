@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://vjsqn0b7g08g"]
+
+[ext_resource type="Texture2D" uid="uid://w0bi4krcmywj" path="res://sprites/plants/corn.png" id="1_wpnr7"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/farmScene/HarvestParticles.tscn" id="2_hlh6f"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_pep1m"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_nkew2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pep1m"]
+radius = 32.0
+height = 116.0
+
+[node name="corn" type="Node2D"]
+
+[node name="corn" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wpnr7")
+hframes = 3
+script = ExtResource("2_pep1m")
+grow_times = 7.0
+auto_grow = false
+
+[node name="HarvestParticles" parent="." instance=ExtResource("2_hlh6f")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_nkew2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(2, -59)
+shape = SubResource("CapsuleShape2D_pep1m")

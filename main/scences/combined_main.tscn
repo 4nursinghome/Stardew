@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3sqc64o4g0jp"]
+
+[ext_resource type="Script" uid="uid://bddt65bsck7iw" path="res://scenes/combined_main.gd" id="1_ki8h4"]
+[ext_resource type="PackedScene" uid="uid://crt7j6hruto5n" path="res://scenes/farmScene/farm.tscn" id="2_hqtkw"]
+[ext_resource type="PackedScene" uid="uid://brdks3clq5d2f" path="res://scenes/mainScene/mainPage.tscn" id="3_vbdgb"]
+[ext_resource type="PackedScene" uid="uid://epmihyqea63" path="res://scenes/fightingScene/scenes/main.tscn" id="4_hqtkw"]
+
+[node name="combinedMain" type="Node2D"]
+script = ExtResource("1_ki8h4")
+
+[node name="mainPage" parent="." instance=ExtResource("3_vbdgb")]
+
+[node name="main" parent="." instance=ExtResource("4_hqtkw")]
+position = Vector2(1848, 32)
+
+[node name="farm" parent="." instance=ExtResource("2_hqtkw")]
+position = Vector2(-1776, 528)
+
+[editable path="mainPage"]
+[editable path="main"]

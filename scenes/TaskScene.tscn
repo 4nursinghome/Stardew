@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bwu7iucp707t8" path="res://scenes/task_scene.gd" id="1_miwrg"]
 [ext_resource type="Texture2D" uid="uid://c0jkwxfva6v4j" path="res://assets/任務底圖.png" id="2_kxowd"]
-[ext_resource type="Texture2D" uid="uid://dcflpkrdgnun3" path="res://assets/回到布告欄縮圖 (2).png" id="3_uxak6"]
+[ext_resource type="Texture2D" uid="uid://rq2m58yqowep" path="res://assets/window_290x290.png" id="3_p4jqa"]
 [ext_resource type="Script" uid="uid://betrpyatpod3y" path="res://scenes/back_button.gd" id="4_gutmt"]
-[ext_resource type="Texture2D" uid="uid://cpe3dac22yw6t" path="res://assets/離開縮圖 (2).png" id="5_7w1kq"]
+[ext_resource type="Texture2D" uid="uid://p675b5eyaeng" path="res://assets/home_256x256.png" id="5_m6sm0"]
 [ext_resource type="Script" uid="uid://crmk6viempe5n" path="res://scenes/quit_button.gd" id="6_p4jqa"]
 [ext_resource type="Texture2D" uid="uid://dhnucbno7t6iu" path="res://assets/任務圖示.png" id="7_gutmt"]
 [ext_resource type="Texture2D" uid="uid://bx11h0x3wosvm" path="res://assets/領取.png" id="8_7w1kq"]
@@ -43,20 +43,20 @@ texture = ExtResource("2_kxowd")
 [node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 280.0
-offset_top = 3.0
-offset_right = 536.0
-offset_bottom = 259.0
-texture_normal = ExtResource("3_uxak6")
+offset_top = -40.0
+offset_right = 570.0
+offset_bottom = 250.0
+texture_normal = ExtResource("3_p4jqa")
 script = ExtResource("4_gutmt")
+metadata/_edit_group_ = true
 
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = -2.0
-offset_right = 272.0
-offset_bottom = 254.0
-texture_normal = ExtResource("5_7w1kq")
-stretch_mode = 0
+offset_left = 24.0
+offset_top = -16.0
+offset_right = 280.0
+offset_bottom = 240.0
+texture_normal = ExtResource("5_m6sm0")
 script = ExtResource("6_p4jqa")
 
 [node name="TitleLabel" type="Label" parent="."]

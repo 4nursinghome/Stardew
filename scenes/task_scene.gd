@@ -5,28 +5,28 @@ var all_tasks = [
 		"title": "繳交紅蘿蔔",
 		"target": "carrot",
 		"required": 3,
-		"reward": {"Tomato": 2},
+		"reward": 10,
 		"claimed": false
 	},
 	{
-		"title": "繳交葡萄",
-		"target": "Grape",
+		"title": "繳交玉米",
+		"target": "corn",
 		"required": 5,
-		"reward": {"corn": 1},
+		"reward": 15,
 		"claimed": false
 	},
 	{
 		"title": "繳交南瓜",
-		"target": "Pumpkin",
+		"target": "pumpkin",
 		"required": 2,
-		"reward": {"Cabbage": 3},
+		"reward": 20,
 		"claimed": false
 	},
 	{
 		"title": "拔起番茄",
-		"target": "Tomato",
+		"target": "tomato",
 		"required": 4,
-		"reward": {"Carrot": 1},
+		"reward": 12,
 		"claimed": false
 	}
 ]
@@ -34,6 +34,7 @@ var all_tasks = [
 var selected_tasks = []
 
 func _ready():
+	load_game()
 	randomize()
 	all_tasks.shuffle()
 	selected_tasks = all_tasks.slice(0, 3)
@@ -41,15 +42,13 @@ func _ready():
 	for i in range(3):
 		var task_node = get_node("Task_%d" % (i + 1))
 		var task = selected_tasks[i]
-		var owned = GlobalInventory.inventory.get(task["target"], 0)
+		var owned = StoreStage.harvest_data.get(task["target"], 0)
 
 		task_node.get_node("Label").text = task["title"]
 		task_node.get_node("Req_Label").text = "%d / %d" % [owned, task["required"]]
+		task_node.get_node("Reward_Label").text = "金幣 x%d" % task["reward"]
 
-		var reward_text = ""
-		for reward_item in task["reward"]:
-			reward_text += "%s x%d  " % [reward_item, task["reward"][reward_item]]
-		task_node.get_node("Reward_Label").text = reward_text
+	_update_coin_display()
 
 	$TextureButton.pressed.connect(func(): _on_claim_pressed(0))
 	$TextureButton2.pressed.connect(func(): _on_claim_pressed(1))
@@ -62,14 +61,35 @@ func _on_claim_pressed(index: int):
 		task_node.get_node("Req_Label").text = "已領取"
 		return
 
-	var owned = GlobalInventory.inventory.get(task["target"], 0)
+	var owned = StoreStage.harvest_data.get(task["target"], 0)
 	if owned >= task["required"]:
-		GlobalInventory.inventory[task["target"]] -= task["required"]
-		for reward_item in task["reward"]:
-			GlobalInventory.inventory[reward_item] += task["reward"][reward_item]
+		StoreStage.harvest_data[task["target"]] -= task["required"]
+		GlobalProperty.Property["Coin"] += task["reward"]
 		task["claimed"] = true
 		task_node.get_node("Req_Label").text = "已完成"
-		print("🎉 任務完成，獲得獎勵：", task["reward"])
+		print("🎉 任務完成，獲得金幣：", task["reward"])
+		save_game()
+		_update_coin_display()
 	else:
 		task_node.get_node("Req_Label").text = "%d / %d" % [owned, task["required"]]
 		print("❌ 條件未達成，目前持有：", owned, "/", task["required"])
+
+func _update_coin_display():
+	$Coin/Label.text = str(GlobalProperty.Property["Coin"])
+
+func save_game():
+	var save_data = {
+		"coin": GlobalProperty.Property["Coin"]
+	}
+	var file = FileAccess.open("user://save_data.json", FileAccess.WRITE)
+	file.store_string(JSON.stringify(save_data))
+	file.close()
+
+func load_game():
+	if FileAccess.file_exists("user://save_data.json"):
+		var file = FileAccess.open("user://save_data.json", FileAccess.READ)
+		var content = file.get_as_text()
+		var save_data = JSON.parse_string(content)
+		if save_data:
+			GlobalProperty.Property["Coin"] = save_data.get("coin", 10)
+		file.close()

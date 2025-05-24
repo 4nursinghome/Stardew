@@ -91,7 +91,7 @@ offset_top = 497.202
 offset_right = 894.578
 offset_bottom = 753.202
 theme_override_font_sizes/font_size = 180
-text = "市場趨勢"
+text = "每日笑話"
 script = ExtResource("2_hatms")
 
 [node name="透明按鍵2D" type="Sprite2D" parent="MarginContainer/HBoxContainer"]

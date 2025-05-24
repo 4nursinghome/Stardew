@@ -8,5 +8,6 @@ var inventory = {
 	"Beet": 5,
 	"Pumpkin": 2,
 	"Corn": 7,
-	"Cabbage": 8
+	"Cabbage": 8,
+	"Meow":5
 }

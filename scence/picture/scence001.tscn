@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2hbq3b77e5e"]
+
+[ext_resource type="Texture2D" uid="uid://dlx7ea1budjuw" path="res://background/background001.png" id="1_btoo3"]
+[ext_resource type="Texture2D" uid="uid://c8f2h0prbmbo3" path="res://role/original.png" id="2_xxsx7"]
+[ext_resource type="Script" path="res://scence/picture/scence001.gd" id="3_hw4ov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f6l22"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("3_hw4ov")
+
+[node name="001" type="Sprite2D" parent="."]
+position = Vector2(540, 768)
+texture = ExtResource("1_btoo3")
+
+[node name="Original" type="Sprite2D" parent="."]
+position = Vector2(765, 980)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_xxsx7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 96.0
+offset_top = 1016.0
+offset_right = 1024.0
+offset_bottom = 1416.0
+localize_numeral_system = false
+
+[node name="Panel" type="Panel" parent="Control"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_top = 0.02
+anchor_right = -0.034
+anchor_bottom = 0.02
+offset_left = -0.447998
+offset_right = 951.552
+offset_bottom = 448.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f6l22")
+
+[node name="LabelName" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.021
+anchor_bottom = 0.036
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 636.008
+offset_bottom = 111.872
+theme_override_font_sizes/font_size = 40
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 896.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 40

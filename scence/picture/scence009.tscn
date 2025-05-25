@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b57ge2rhfi8a"]
+
+[ext_resource type="Texture2D" uid="uid://b1h0vu8smorle" path="res://background/background004.png" id="1_fqucg"]
+[ext_resource type="Texture2D" uid="uid://2awirs8tc34j" path="res://background/people.png" id="2_t0q0a"]
+[ext_resource type="Script" path="res://scence/scence004.gd" id="3_brjqt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8uw1"]
+bg_color = Color(0.6, 0.6, 0.6, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 335.0
+expand_margin_bottom = 100.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background004" type="Sprite2D" parent="."]
+position = Vector2(540, 768)
+scale = Vector2(1.05469, 1)
+texture = ExtResource("1_fqucg")
+
+[node name="ChatGptImage2025年5月1日下午015256" type="Sprite2D" parent="."]
+position = Vector2(852, 1051)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_t0q0a")
+
+[node name="DialogueLayer2" type="CanvasLayer" parent="ChatGptImage2025年5月1日下午015256"]
+offset = Vector2(90, 1100)
+scale = Vector2(2.5, 2.5)
+transform = Transform2D(2.5, 0, 0, 2.5, 90, 1100)
+script = ExtResource("3_brjqt")
+
+[node name="Panel" type="Panel" parent="ChatGptImage2025年5月1日下午015256/DialogueLayer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i8uw1")
+
+[node name="Label" type="Label" parent="ChatGptImage2025年5月1日下午015256/DialogueLayer2/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4dkws3fsm52g"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_338tg"]
+[ext_resource type="Texture2D" uid="uid://c20piq4q21hg6" path="res://background/main.png" id="2_22k61"]
+[ext_resource type="Texture2D" uid="uid://blr3ss0h82qna" path="res://background/road002.png" id="3_83m3f"]
+[ext_resource type="Texture2D" uid="uid://bpv3er43n2ss0" path="res://background/road001.png" id="4_gf7yo"]
+[ext_resource type="Texture2D" uid="uid://7xqv1icr5qum" path="res://background/coin_board.PNG" id="8_sgqj3"]
+[ext_resource type="Texture2D" uid="uid://dwqi7txwcuie1" path="res://background/heart.png" id="9_dgi5k"]
+
+[node name="main" type="CanvasLayer"]
+script = ExtResource("1_338tg")
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="background001" type="Sprite2D" parent="background"]
+position = Vector2(540, 768)
+texture = ExtResource("2_22k61")
+
+[node name="road_horizontal" type="Node2D" parent="."]
+
+[node name="Road0021" type="Sprite2D" parent="road_horizontal"]
+position = Vector2(540, 1320)
+texture = ExtResource("3_83m3f")
+
+[node name="Road0022" type="Sprite2D" parent="road_horizontal"]
+position = Vector2(540, 1067.5)
+texture = ExtResource("3_83m3f")
+
+[node name="Road0023" type="Sprite2D" parent="road_horizontal"]
+position = Vector2(540, 815)
+texture = ExtResource("3_83m3f")
+
+[node name="Road0024" type="Sprite2D" parent="road_horizontal"]
+position = Vector2(540, 562.5)
+texture = ExtResource("3_83m3f")
+
+[node name="Road0025" type="Sprite2D" parent="road_horizontal"]
+position = Vector2(540, 310)
+texture = ExtResource("3_83m3f")
+
+[node name="road_straight" type="Node2D" parent="."]
+
+[node name="Road0011" type="Sprite2D" parent="road_straight"]
+position = Vector2(24, 815)
+texture = ExtResource("4_gf7yo")
+
+[node name="Road0012" type="Sprite2D" parent="road_straight"]
+position = Vector2(282, 815)
+texture = ExtResource("4_gf7yo")
+
+[node name="Road0013" type="Sprite2D" parent="road_straight"]
+position = Vector2(540, 815)
+texture = ExtResource("4_gf7yo")
+
+[node name="Road0014" type="Sprite2D" parent="road_straight"]
+position = Vector2(798, 815)
+texture = ExtResource("4_gf7yo")
+
+[node name="Road0015" type="Sprite2D" parent="road_straight"]
+position = Vector2(1056, 815)
+texture = ExtResource("4_gf7yo")
+
+[node name="bottom_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="farm" type="TextureButton" parent="bottom_ui"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 1451.0
+offset_right = 590.0
+offset_bottom = 1451.0
+
+[node name="missingboard" type="TextureButton" parent="bottom_ui"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 1425.0
+offset_right = 540.0
+offset_bottom = 1425.0
+
+[node name="skill" type="TextureButton" parent="bottom_ui"]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 1424.0
+offset_right = 895.0
+offset_bottom = 1424.0
+
+[node name="coin_ui" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="coin_ui"]
+layout_mode = 2
+
+[node name="CoinBoard" type="Sprite2D" parent="coin_ui/TextureRect"]
+position = Vector2(200, 224)
+texture = ExtResource("8_sgqj3")
+
+[node name="Label" type="Label" parent="coin_ui"]
+layout_mode = 2
+
+[node name="heart_ui" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart001" type="Sprite2D" parent="heart_ui"]
+position = Vector2(1140, 480)
+texture = ExtResource("9_dgi5k")
+offset = Vector2(-546, -396)
+
+[node name="heart002" type="Sprite2D" parent="heart_ui"]
+position = Vector2(1230, 480)
+texture = ExtResource("9_dgi5k")
+offset = Vector2(-546, -396)
+
+[node name="heart003" type="Sprite2D" parent="heart_ui"]
+position = Vector2(1324, 480)
+texture = ExtResource("9_dgi5k")
+offset = Vector2(-546, -396)
+
+[node name="heart004" type="Sprite2D" parent="heart_ui"]
+position = Vector2(1418, 480)
+texture = ExtResource("9_dgi5k")
+offset = Vector2(-546, -396)
+
+[node name="heart005" type="Sprite2D" parent="heart_ui"]
+position = Vector2(1512, 480)
+texture = ExtResource("9_dgi5k")
+offset = Vector2(-546, -396)
+
+[node name="Timer" type="Timer" parent="."]

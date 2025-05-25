@@ -1,5 +1,5 @@
 extends TextureButton
 
 func _pressed():
-	print("倉庫前往布告欄的按鈕被點擊了")
+	print("The warehouse to notice board button was clicked")
 	get_tree().change_scene_to_file("res://scenes/BulletinBoard.tscn")

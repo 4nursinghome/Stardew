@@ -1,4 +1,5 @@
 extends Control
+signal request_switch_to(page_name: String)
 
 const PLANTS = ["carrot","tomato","onion","broccoli","beet","pumpkin","corn","cabbage","cat"]
 
@@ -15,3 +16,9 @@ func _ready():
 				label.text = "x" + str(amount)
 			else:
 				slot_node.visible = false
+
+
+func _on_back_button_pressed() -> void:
+	print("back在基層被按下")
+	emit_signal("request_switch_to","NoticeItem_control")
+	# Replace with function body.

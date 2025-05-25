@@ -1,13 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://8ionauann4ba"]
+[gd_scene load_steps=14 format=3 uid="uid://8ionauann4ba"]
 
 [ext_resource type="Script" uid="uid://d3xg0tbncgf1j" path="res://scenes/warehouse_scene.gd" id="1_53osh"]
-[ext_resource type="Texture2D" uid="uid://batwhyok865qj" path="res://assets/倉庫底圖.png" id="1_mljw4"]
-[ext_resource type="Texture2D" uid="uid://cpe3dac22yw6t" path="res://assets/離開縮圖 (2).png" id="2_yk4x1"]
-[ext_resource type="Script" uid="uid://dmvpxdjjur6ep" path="res://scenes/Warehouse_getback_button.gd" id="3_35nyw"]
+[ext_resource type="Texture2D" uid="uid://d2pip3h157o33" path="res://assets/StoreRoom.png" id="2_cyryl"]
 [ext_resource type="Texture2D" uid="uid://3v2skg074ayr" path="res://assets/九宮格.png" id="3_kbutl"]
-[ext_resource type="Texture2D" uid="uid://rq2m58yqowep" path="res://assets/window_290x290.png" id="4_24duw"]
-[ext_resource type="Script" uid="uid://nbvglilfto6x" path="res://scenes/Warehouse_quit_button.gd" id="4_jk8uw"]
-[ext_resource type="Texture2D" uid="uid://p675b5eyaeng" path="res://assets/home_256x256.png" id="6_cyryl"]
+[ext_resource type="Texture2D" uid="uid://bsen2u074p6kf" path="res://assets/back_picture_256.png" id="4_x64xd"]
 [ext_resource type="Texture2D" uid="uid://cnf4oeg0kuf4p" path="res://assets/plants/crop_0_1.png" id="8_gppfg"]
 [ext_resource type="Texture2D" uid="uid://56q0ltqsbcbs" path="res://assets/plants/crop_2_0.png" id="9_kbutl"]
 [ext_resource type="Texture2D" uid="uid://b8k1owe0colwb" path="res://assets/plants/crop_0_0.png" id="10_nm333"]
@@ -34,9 +30,9 @@ offset_left = -24.0
 offset_top = -16.0
 offset_right = 95.9999
 offset_bottom = 160.0
-texture = ExtResource("1_mljw4")
+texture = ExtResource("2_cyryl")
 
-[node name="木製九宮格" type="TextureRect" parent="."]
+[node name="Wooden_Nine_Grid" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -56.0
 offset_top = 88.0
@@ -49,28 +45,12 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Back_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 808.0
-offset_top = -16.0
-offset_right = 1098.0
-offset_bottom = 274.0
-texture_normal = ExtResource("4_24duw")
-script = ExtResource("3_35nyw")
-
-[node name="QuitButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.8
-anchor_top = 0.2
-anchor_right = 6.4
-anchor_bottom = 6.4
-offset_left = -42.0
-offset_top = -8.0
-offset_right = -10.0
-texture_normal = ExtResource("6_cyryl")
-texture_pressed = ExtResource("2_yk4x1")
-script = ExtResource("4_jk8uw")
+offset_top = 24.0
+offset_right = 290.0
+offset_bottom = 314.0
+texture_normal = ExtResource("4_x64xd")
 
 [node name="NineGrid" type="GridContainer" parent="."]
 layout_mode = 0
@@ -256,3 +236,5 @@ offset_right = 928.0
 offset_bottom = 1344.0
 theme_override_font_sizes/font_size = 64
 text = "x3"
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

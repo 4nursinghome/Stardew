@@ -1,6 +1,6 @@
 extends TextureButton
 
 func _pressed():
-	print("倉庫的離開按鈕被點擊了")
+	print("The warehouse's leave button was clicked")
 	pass
 	get_tree().quit()

@@ -1,5 +1,5 @@
 extends TextureButton
 func _pressed():
-	print("前往任務")
+	print("Go to task")
 	get_tree().change_scene_to_file("res://scenes/TaskScene.tscn")
 	

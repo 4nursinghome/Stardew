@@ -1,31 +1,39 @@
 extends Control
-#@onready var bgm_player = $BGMPlayer
 
+signal request_switch_to(page_name: String)
 
+@onready var bgm_player = $BGMPlayer
 
-# 市場狀態：0 = 跌勢，1 = 漲勢
-var market_state: int = 0
-
-# Timer 節點名稱
-@onready var market_timer: Timer = $MarketTimer
 
 func _ready():
 	if not GlobalBGM.bgm_player.is_playing():
-		GlobalBGM.bgm_player.play()
-	#bgm_player.play()
-	randomize()  # 初始化亂數種子
-	market_timer.wait_time = 60.0  # 每 60 秒觸發一次
-	market_timer.start()
-	_update_market()  # 初始化一次市場狀態
+		GlobalBGM.bgm_player.play()	#bgm_player.play()
 
-func _on_MarketTimer_timeout():
-	_update_market()
+func _on_texture_button_pressed() -> void:
+	print("Task按鈕在基層被按下")
+	emit_signal("request_switch_to","Task_control")
+	 # Replace with function body.
 
-func _update_market():
-	market_state = randi_range(0, 1)
-	if market_state == 0:
-		print("📉 市場呈現跌勢")
-		# 這裡可以加上 UI 顯示邏輯，例如變紅色箭頭
-	else:
-		print("📈 市場呈現漲勢")
-		# 這裡可以加上 UI 顯示邏輯，例如變綠色箭頭
+
+func _on_texture_button_2_pressed() -> void:
+	print("Jokes按鈕在基層被按下")
+	emit_signal("request_switch_to","Jokes_control")
+# Replace with function body.
+
+
+func _on_texture_button_3_pressed() -> void:
+	print("倉庫按鈕在基層被按下")
+	emit_signal("request_switch_to","StoreRoom_control")
+	# Replace with function body.
+
+
+func _on_home_button_pressed() -> void:
+	print("home按鈕在基層被按下")
+	emit_signal("request_switch_to","Home")
+	# Replace with function body.
+
+
+func _on_farm_button_pressed() -> void:
+	print("farm在基層被按下")
+	emit_signal("request_switch_to","Farm_control")
+	# Replace with function body.

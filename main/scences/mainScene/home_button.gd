@@ -1,7 +1,7 @@
 extends Area2D
 signal pressed(button_name)
 
-@export var button_name: String = "home"
+@export var button_name: String = "farm_home"
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:

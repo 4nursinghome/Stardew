@@ -1,7 +1,6 @@
 extends Area2D
+signal building_pressed(button_name: String)
 
-func _ready():
-	connect("input_event", Callable(self, "_on_building_clicked"))
-func _on_building_clicked(_viewport, event, _shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		get_tree().change_scene_to_file("res://scenes/fightingScene/scenes/main.tscn")
+		emit_signal("building_pressed", "5") 

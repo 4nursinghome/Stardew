@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://brdks3clq5d2f"]
+[gd_scene load_steps=11 format=3 uid="uid://brdks3clq5d2f"]
 
 [ext_resource type="Script" uid="uid://cejomuh0v422v" path="res://scenes/mainScene/main_page.gd" id="1_v18h2"]
 [ext_resource type="Texture2D" uid="uid://c20piq4q21hg6" path="res://background/main.png" id="1_xktlv"]
-[ext_resource type="Texture2D" uid="uid://70ml5qjmytcf" path="res://house/personal.png" id="2_m0ry0"]
 [ext_resource type="Texture2D" uid="uid://cx6fpvan7drk2" path="res://house/storage.png" id="3_8gku1"]
 [ext_resource type="PackedScene" uid="uid://ca8rbd2umbk01" path="res://scenes/mainScene/house.tscn" id="4_j0msa"]
 [ext_resource type="PackedScene" uid="uid://5x3js6en5gl3" path="res://scenes/mainScene/h_road.tscn" id="5_v18h2"]
 [ext_resource type="PackedScene" uid="uid://dyuou2ijtvjuo" path="res://scenes/mainScene/s_road.tscn" id="6_hte70"]
 [ext_resource type="PackedScene" uid="uid://cbcay5t2kitoo" path="res://scenes/mainScene/button.tscn" id="7_jhjir"]
 [ext_resource type="PackedScene" uid="uid://cmfl352w7ad53" path="res://scenes/mainScene/icon.tscn" id="8_j4pdi"]
+[ext_resource type="Script" uid="uid://cjqhsvtqrdhg1" path="res://scenes/mainScene/time.gd" id="9_v18h2"]
+
+[sub_resource type="Theme" id="Theme_v18h2"]
 
 [node name="mainPage" type="Node2D"]
 script = ExtResource("1_v18h2")
@@ -21,26 +23,62 @@ position = Vector2(540, 765.5)
 scale = Vector2(1, 0.996745)
 texture = ExtResource("1_xktlv")
 
-[node name="Personal" type="Sprite2D" parent="."]
-position = Vector2(152, 1203)
-scale = Vector2(1.12, 1.1)
-texture = ExtResource("2_m0ry0")
-
 [node name="Storage" type="Sprite2D" parent="."]
-position = Vector2(410.5, 1203.5)
-scale = Vector2(1.145, 1.095)
+position = Vector2(194.75, 1158.75)
+scale = Vector2(1.4925, 1.5075)
 texture = ExtResource("3_8gku1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(540, 764)
-limit_left = 0
-limit_top = 0
-limit_right = 1080
-limit_bottom = 1536
 
 [node name="house" parent="." instance=ExtResource("4_j0msa")]
 
+[node name="Building001" parent="house" index="0"]
+position = Vector2(-144, -32)
+
+[node name="CollisionShape2D" parent="house/Building001" index="0"]
+position = Vector2(680, 1176)
+
+[node name="building001" parent="house/Building001" index="1"]
+position = Vector2(683, 1184)
+scale = Vector2(0.624, 0.736)
+
+[node name="Building002" parent="house" index="1"]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="house/Building002" index="0"]
+position = Vector2(884, 1152)
+
+[node name="building002" parent="house/Building002" index="1"]
+position = Vector2(883.75, 1126.25)
+scale = Vector2(0.625, 0.825)
+
+[node name="Building003" parent="house" index="2"]
+position = Vector2(-16, 8)
+
+[node name="building003" parent="house/Building003" index="0"]
+position = Vector2(204, 776)
+scale = Vector2(0.592, 0.736)
+
+[node name="CollisionShape2D" parent="house/Building003" index="1"]
+position = Vector2(208, 808)
+
+[node name="Building004" parent="house" index="3"]
+position = Vector2(-384, -120)
+
+[node name="Building005" parent="house" index="4"]
+position = Vector2(216, 128)
+
+[node name="Building006" parent="house" index="5"]
+position = Vector2(48, 48)
+
+[node name="Building007" parent="house" index="6"]
+position = Vector2(136, 32)
+
+[node name="Building008" parent="house" index="7"]
+position = Vector2(224, 32)
+
 [node name="h_road" parent="." instance=ExtResource("5_v18h2")]
+
+[node name="h_road004" parent="h_road" index="3"]
+position = Vector2(540, 312)
 
 [node name="s_road" parent="." instance=ExtResource("6_hte70")]
 
@@ -49,3 +87,17 @@ mouse_filter = 1
 
 [node name="mainPageIcon" parent="." instance=ExtResource("8_j4pdi")]
 mouse_filter = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="time" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_v18h2")
+theme_override_font_sizes/font_size = 32
+script = ExtResource("9_v18h2")
+
+[editable path="house"]
+[editable path="h_road"]
+[editable path="s_road"]

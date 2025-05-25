@@ -9,17 +9,13 @@ position = Vector2(24, 815)
 texture = ExtResource("1_whr0p")
 
 [node name="s_road002" type="Sprite2D" parent="."]
-position = Vector2(282, 815)
+position = Vector2(368, 815)
 texture = ExtResource("1_whr0p")
 
 [node name="s_road003" type="Sprite2D" parent="."]
-position = Vector2(540, 815)
+position = Vector2(712, 815)
 texture = ExtResource("1_whr0p")
 
 [node name="s_road004" type="Sprite2D" parent="."]
-position = Vector2(798, 815)
-texture = ExtResource("1_whr0p")
-
-[node name="s_road005" type="Sprite2D" parent="."]
 position = Vector2(1056, 815)
 texture = ExtResource("1_whr0p")

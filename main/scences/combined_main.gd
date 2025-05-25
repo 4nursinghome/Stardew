@@ -1,5 +1,6 @@
 extends Node2D
-signal building_scene(number:int)
+signal change_scene(number:String)
+signal change_enemy(number:String)
 @onready var farmCam=$farm/Camera2D
 @onready var mainCam=$mainPage/Camera2D
 @onready var main=$mainPage
@@ -9,7 +10,7 @@ signal building_scene(number:int)
 @onready var game_over=$fight/GameOver
 @onready var fight=$fight
 @onready var board=$Main_contorl
-@onready var boardCam=$Main_contorl/StoreRoom_Camera2D
+@onready var boardCam=$Main_contorl/NoticeItem_Camera2D
 @onready var farmPagebutton=$farm/farmButton
 func _ready():
 	call_deferred("setup_signals")
@@ -33,18 +34,20 @@ func reset_fight():
 	_new_fight.name = "fight"
 	_new_fight.active = false  # 確保還沒開始
 	add_child(_new_fight)
-
+	move_child(_new_fight, get_children().find(main) + 3)
 	await get_tree().process_frame
 	fight = _new_fight
 	win = _new_fight.get_node("win")
 	game_over = _new_fight.get_node("GameOver")
 	fightCam = _new_fight.get_node("Camera2D")
-	
+	fight.button_W_L_pressed.connect(switch_Cam)
 	fightCam.enabled = false
 
 	print("🎥 fightCam 確認抓到：", fightCam)
 	print("🎥 是否 Camera2D：", fightCam is Camera2D)
 	print("🎥 current 狀態：", fightCam.enabled)
+	print("📌 fight 加進的父節點是：", _new_fight.get_parent().name)
+
 func start_fight():
 	if fight:
 		fight.start() 
@@ -55,37 +58,48 @@ func switch_Cam(button_name):
 	fightCam.enabled = false
 	match button_name: 
 		"farm":
+			print("ggggggggg")
+			boardCam.enabled=false
 			farmCam.enabled = true
+			farmCam.make_current() 
 		"board_to_home":
 			print("qqqqqqq")
+			boardCam.enabled=false
 			mainCam.enabled=true
 		"board_to_farm":
 			farmCam.enabled=true
 		"home":
-			await reset_fight()
-			await get_tree().process_frame 
+			reset_fight()
 			mainCam.enabled = true
 			mainCam.make_current() 
 			print("🎥 mainCam 確認抓到：", mainCam)
 			print("🎥 是否 Camera2D：", mainCam is Camera2D)
 			print("🎥 current 狀態：", mainCam.enabled)
+			print("🎥 fight current 狀態：", fightCam.enabled)
 			   # ✅ 切換控制權 
 			print("🎥 Current camera node is: ", get_viewport().get_camera_2d())
 		"board":
+			print("board")
 			boardCam.enabled=true
+			boardCam.make_current()
 		"farm_home":
 			mainCam.enabled=true
+			mainCam.make_current()
 		"reset_fight":
-			
 			await reset_fight()
 			fightCam.enabled=true
+			fightCam.make_current()
 		"fight":
 			print("why????")
 			await reset_fight()
 			await start_fight()
 			fightCam.enabled=true
+			fightCam.make_current()
 		_:
-			if button_name in ["1", "2", "3", "4", "5","6", "7", "8"]:
+			if button_name in ["2", "9", "3", "4", "5","6", "7", "8"]:
 				await start_fight()
+				boardCam.enabled=false
 				fightCam.enabled = true
-				emit_signal("building_scene",button_name)
+				fightCam.make_current()
+				emit_signal("change_scene",button_name)
+				emit_signal("change_enemy",button_name)

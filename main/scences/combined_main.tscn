@@ -9,24 +9,49 @@
 [node name="combinedMain" type="Node2D"]
 script = ExtResource("1_ki8h4")
 
+[node name="farm" parent="." instance=ExtResource("2_hqtkw")]
+position = Vector2(-6832, -2552)
+
 [node name="mainPage" parent="." instance=ExtResource("3_vbdgb")]
+position = Vector2(-1256, -3344)
+
+[node name="house" parent="mainPage" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="button" parent="mainPage" index="5"]
+metadata/_edit_use_anchors_ = true
+
+[node name="mainPageIcon" parent="mainPage" index="6"]
+metadata/_edit_use_anchors_ = true
+
+[node name="fight" parent="." instance=ExtResource("4_hqtkw")]
+position = Vector2(3496, 192)
 metadata/_edit_group_ = true
 
-[node name="house" parent="mainPage" index="3"]
-metadata/_edit_use_anchors_ = true
-
-[node name="button" parent="mainPage" index="6"]
-metadata/_edit_use_anchors_ = true
-
-[node name="mainPageIcon" parent="mainPage" index="7"]
-metadata/_edit_use_anchors_ = true
+[node name="back_to_main_Button" parent="fight/win" index="2"]
+offset_left = 104.0
+offset_top = 1128.0
+offset_right = 975.0
+offset_bottom = 1358.0
 
 [node name="Main_contorl" parent="." instance=ExtResource("5_vbdgb")]
 offset_left = -1486.0
 offset_top = 4392.0
 offset_right = -1486.0
 offset_bottom = 4392.0
-metadata/_edit_lock_ = true
+mouse_filter = 2
+
+[node name="Farm_Button" parent="Main_contorl/NoticeItem_control" index="1"]
+offset_left = -418.0
+offset_top = 88.0
+offset_right = -128.0
+offset_bottom = 378.0
+
+[node name="Home_Button" parent="Main_contorl/NoticeItem_control" index="2"]
+offset_left = -674.0
+offset_top = 104.0
+offset_right = -418.0
+offset_bottom = 360.0
 
 [node name="Task_control" parent="Main_contorl" index="3"]
 metadata/_edit_group_ = true
@@ -49,24 +74,14 @@ position = Vector2(2054, 680)
 [node name="NoticeItem_Camera2D" parent="Main_contorl" index="8"]
 position = Vector2(-346, 1120)
 
-[node name="farm" parent="." instance=ExtResource("2_hqtkw")]
-position = Vector2(-3304, 432)
-
-[node name="fight" parent="." instance=ExtResource("4_hqtkw")]
-position = Vector2(3496, 192)
-metadata/_edit_group_ = true
-
-[node name="back_to_main_Button" parent="fight/win" index="2"]
-offset_left = 104.0
-offset_top = 1128.0
-offset_right = 975.0
-offset_bottom = 1358.0
-
 [editable path="mainPage"]
 [editable path="mainPage/house"]
 [editable path="mainPage/h_road"]
 [editable path="mainPage/s_road"]
-[editable path="Main_contorl"]
+[editable path="mainPage/button"]
 [editable path="fight"]
+[editable path="fight/background"]
 [editable path="fight/win"]
 [editable path="fight/GameOver"]
+[editable path="Main_contorl"]
+[editable path="Main_contorl/NoticeItem_control"]

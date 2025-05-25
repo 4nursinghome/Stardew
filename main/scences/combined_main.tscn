@@ -1,20 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3sqc64o4g0jp"]
+[gd_scene load_steps=6 format=3 uid="uid://b3sqc64o4g0jp"]
 
 [ext_resource type="Script" uid="uid://bddt65bsck7iw" path="res://scenes/combined_main.gd" id="1_ki8h4"]
 [ext_resource type="PackedScene" uid="uid://crt7j6hruto5n" path="res://scenes/farmScene/farm.tscn" id="2_hqtkw"]
 [ext_resource type="PackedScene" uid="uid://brdks3clq5d2f" path="res://scenes/mainScene/mainPage.tscn" id="3_vbdgb"]
-[ext_resource type="PackedScene" uid="uid://epmihyqea63" path="res://scenes/fightingScene/scenes/main.tscn" id="4_hqtkw"]
+[ext_resource type="PackedScene" uid="uid://epmihyqea63" path="res://scenes/fightingScene/scenes/fight.tscn" id="4_hqtkw"]
+[ext_resource type="PackedScene" uid="uid://bv1v0tpk3j8kk" path="res://scenes/nursing_home/scenes/main_control.tscn" id="5_vbdgb"]
 
 [node name="combinedMain" type="Node2D"]
 script = ExtResource("1_ki8h4")
 
 [node name="mainPage" parent="." instance=ExtResource("3_vbdgb")]
+metadata/_edit_group_ = true
 
-[node name="main" parent="." instance=ExtResource("4_hqtkw")]
-position = Vector2(1848, 32)
+[node name="house" parent="mainPage" index="3"]
+metadata/_edit_use_anchors_ = true
+
+[node name="button" parent="mainPage" index="6"]
+metadata/_edit_use_anchors_ = true
+
+[node name="mainPageIcon" parent="mainPage" index="7"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Main_contorl" parent="." instance=ExtResource("5_vbdgb")]
+offset_left = -1486.0
+offset_top = 4392.0
+offset_right = -1486.0
+offset_bottom = 4392.0
+metadata/_edit_lock_ = true
+
+[node name="Task_control" parent="Main_contorl" index="3"]
+metadata/_edit_group_ = true
+
+[node name="StoreRoom_contorl" parent="Main_contorl" index="4"]
+offset_left = 1518.0
+offset_top = -128.0
+offset_right = 1558.0
+offset_bottom = -87.9995
+
+[node name="Jokes_Camera2D" parent="Main_contorl" index="5"]
+position = Vector2(3278, 2656)
+
+[node name="Task_Camera2D" parent="Main_contorl" index="6"]
+metadata/_edit_group_ = true
+
+[node name="StoreRoom_Camera2D" parent="Main_contorl" index="7"]
+position = Vector2(2054, 680)
+
+[node name="NoticeItem_Camera2D" parent="Main_contorl" index="8"]
+position = Vector2(-346, 1120)
 
 [node name="farm" parent="." instance=ExtResource("2_hqtkw")]
-position = Vector2(-1776, 528)
+position = Vector2(-3304, 432)
+
+[node name="fight" parent="." instance=ExtResource("4_hqtkw")]
+position = Vector2(3496, 192)
+metadata/_edit_group_ = true
+
+[node name="back_to_main_Button" parent="fight/win" index="2"]
+offset_left = 104.0
+offset_top = 1128.0
+offset_right = 975.0
+offset_bottom = 1358.0
 
 [editable path="mainPage"]
-[editable path="main"]
+[editable path="mainPage/house"]
+[editable path="mainPage/h_road"]
+[editable path="mainPage/s_road"]
+[editable path="Main_contorl"]
+[editable path="fight"]
+[editable path="fight/win"]
+[editable path="fight/GameOver"]

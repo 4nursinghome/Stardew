@@ -1,0 +1,14 @@
+res://scenes/BulletinBoard.tscn
+res://scenes/main_control.tscn
+res://scenes/GlobalBGM.tscn
+res://scenes/Jokes.tscn
+res://scenes/TaskScene.tscn
+res://scenes/WarehouseScene.tscn
+res://scripts/texture_button.gd
+res://scenes/global_bgm.gd
+res://scenes/market_scene.gd
+res://scenes/bulletin_board.gd
+res://scenes/main_control.gd
+res://scenes/NoticeItem.tscn
+res://scenes/warehouse_scene.gd
+res://scenes/task_scene.gd

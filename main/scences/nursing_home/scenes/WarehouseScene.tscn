@@ -1,0 +1,240 @@
+[gd_scene load_steps=14 format=3 uid="uid://8ionauann4ba"]
+
+[ext_resource type="Script" uid="uid://d3xg0tbncgf1j" path="res://scenes/nursing_home/scenes/warehouse_scene.gd" id="1_53osh"]
+[ext_resource type="Texture2D" uid="uid://d2pip3h157o33" path="res://scenes/nursing_home/assets/StoreRoom.png" id="2_cyryl"]
+[ext_resource type="Texture2D" uid="uid://3v2skg074ayr" path="res://scenes/nursing_home/assets/九宮格.png" id="3_kbutl"]
+[ext_resource type="Texture2D" uid="uid://bsen2u074p6kf" path="res://scenes/nursing_home/assets/back_picture_256.png" id="4_x64xd"]
+[ext_resource type="Texture2D" uid="uid://cnf4oeg0kuf4p" path="res://scenes/nursing_home/assets/plants/crop_0_1.png" id="8_gppfg"]
+[ext_resource type="Texture2D" uid="uid://56q0ltqsbcbs" path="res://scenes/nursing_home/assets/plants/crop_2_0.png" id="9_kbutl"]
+[ext_resource type="Texture2D" uid="uid://b8k1owe0colwb" path="res://scenes/nursing_home/assets/plants/crop_0_0.png" id="10_nm333"]
+[ext_resource type="Texture2D" uid="uid://domi8udmbmxpu" path="res://scenes/nursing_home/assets/plants/crop_1_0.png" id="11_24duw"]
+[ext_resource type="Texture2D" uid="uid://c4caaod51dlb1" path="res://scenes/nursing_home/assets/plants/crop_1_1.png" id="12_cyryl"]
+[ext_resource type="Texture2D" uid="uid://b3nwdgo42b6s1" path="res://scenes/nursing_home/assets/plants/crop_1_2.png" id="13_ie4oy"]
+[ext_resource type="Texture2D" uid="uid://cpbllos0okvq6" path="res://scenes/nursing_home/assets/plants/crop_2_1.png" id="14_0h2dx"]
+[ext_resource type="Texture2D" uid="uid://blpw75l280tx1" path="res://scenes/nursing_home/assets/plants/crop_2_2.png" id="15_16715"]
+[ext_resource type="Texture2D" uid="uid://dccu4ederh1dg" path="res://scenes/nursing_home/assets/cat_transparent-removebg-preview.png" id="17_cyryl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_53osh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 25.0
+anchor_bottom = 37.4
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 95.9999
+offset_bottom = 160.0
+texture = ExtResource("2_cyryl")
+
+[node name="Wooden_Nine_Grid" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 88.0
+offset_right = 1152.0
+offset_bottom = 1872.0
+texture = ExtResource("3_kbutl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Back_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 290.0
+offset_bottom = 314.0
+texture_normal = ExtResource("4_x64xd")
+
+[node name="NineGrid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CarrotSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/CarrotSlot"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 616.0
+offset_right = 366.0
+offset_bottom = 792.0
+texture = ExtResource("8_gppfg")
+
+[node name="Label" type="Label" parent="NineGrid/CarrotSlot"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 728.0
+offset_right = 379.0
+offset_bottom = 816.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="TomatoSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/TomatoSlot"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 884.0
+offset_right = 350.0
+offset_bottom = 1060.0
+texture = ExtResource("9_kbutl")
+
+[node name="Label" type="Label" parent="NineGrid/TomatoSlot"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 980.0
+offset_right = 379.0
+offset_bottom = 1068.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="OnionSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/OnionSlot"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 1153.0
+offset_right = 346.0
+offset_bottom = 1329.0
+texture = ExtResource("10_nm333")
+
+[node name="Label" type="Label" parent="NineGrid/OnionSlot"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 1257.0
+offset_right = 404.0
+offset_bottom = 1345.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="BrocoliSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/BrocoliSlot"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 1152.0
+offset_right = 612.0
+offset_bottom = 1328.0
+texture = ExtResource("11_24duw")
+
+[node name="Label" type="Label" parent="NineGrid/BrocoliSlot"]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 1256.0
+offset_right = 646.0
+offset_bottom = 1344.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="BeetSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/BeetSlot"]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 584.0
+offset_right = 884.0
+offset_bottom = 760.0
+texture = ExtResource("12_cyryl")
+
+[node name="Label" type="Label" parent="NineGrid/BeetSlot"]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 701.0
+offset_right = 895.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="PumpkinSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/PumpkinSlot"]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 861.0
+offset_right = 899.0
+offset_bottom = 1037.0
+texture = ExtResource("13_ie4oy")
+
+[node name="Label" type="Label" parent="NineGrid/PumpkinSlot"]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 965.0
+offset_right = 908.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 64
+text = "x3"
+
+[node name="CornSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/CornSlot"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 859.0
+offset_right = 628.0
+offset_bottom = 1035.0
+texture = ExtResource("14_0h2dx")
+
+[node name="Label" type="Label" parent="NineGrid/CornSlot"]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 963.0
+offset_right = 646.0
+offset_bottom = 1051.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="CabbageSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/CabbageSlot"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 603.0
+offset_right = 637.0
+offset_bottom = 779.0
+texture = ExtResource("15_16715")
+
+[node name="Label" type="Label" parent="NineGrid/CabbageSlot"]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 699.0
+offset_right = 644.0
+offset_bottom = 787.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[node name="CatSlot" type="Control" parent="NineGrid"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NineGrid/CatSlot"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 1141.0
+offset_right = 907.0
+offset_bottom = 1315.0
+texture = ExtResource("17_cyryl")
+
+[node name="Label" type="Label" parent="NineGrid/CatSlot"]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 1239.0
+offset_right = 915.0
+offset_bottom = 1327.0
+theme_override_font_sizes/font_size = 64
+text = "x0"
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

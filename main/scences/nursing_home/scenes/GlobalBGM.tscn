@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://jq1d20xle87d"]
+
+[ext_resource type="AudioStream" uid="uid://d4de5nhv7n01o" path="res://scenes/nursing_home/assets/Beginning.mp3" id="1_a5ovr"]
+[ext_resource type="Script" uid="uid://ddbae5x0k67o5" path="res://scenes/nursing_home/scenes/global_bgm.gd" id="1_v5ucg"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_v5ucg")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_a5ovr")

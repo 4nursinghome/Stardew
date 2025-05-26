@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv1v0tpk3j8kk"]
+
+[ext_resource type="Script" uid="uid://dn8dpkk46blfm" path="res://scenes/nursing_home/scenes/main_control.gd" id="1_4v3x4"]
+[ext_resource type="PackedScene" uid="uid://cvqoiyjbqrpax" path="res://scenes/nursing_home/scenes/NoticeItem.tscn" id="1_8jdwr"]
+[ext_resource type="PackedScene" uid="uid://jq1d20xle87d" path="res://scenes/nursing_home/scenes/GlobalBGM.tscn" id="2_4v3x4"]
+[ext_resource type="PackedScene" uid="uid://c56afwi6smbbn" path="res://scenes/nursing_home/scenes/Jokes.tscn" id="3_sqeji"]
+[ext_resource type="PackedScene" uid="uid://s8du5lcibl2t" path="res://scenes/nursing_home/scenes/TaskScene.tscn" id="4_7lq1i"]
+[ext_resource type="PackedScene" uid="uid://8ionauann4ba" path="res://scenes/nursing_home/scenes/WarehouseScene.tscn" id="5_umxj1"]
+
+[node name="Main_contorl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1216.0
+offset_top = 392.0
+offset_right = -1216.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4v3x4")
+
+[node name="NoticeItem_control" parent="." instance=ExtResource("1_8jdwr")]
+layout_mode = 1
+anchor_left = 2.29998
+anchor_top = -0.896747
+anchor_right = 2.29998
+anchor_bottom = -0.835019
+
+[node name="Bgm_control" parent="." instance=ExtResource("2_4v3x4")]
+
+[node name="Jokes_control" parent="." instance=ExtResource("3_sqeji")]
+layout_mode = 1
+offset_left = 2727.97
+offset_top = 1896.33
+offset_right = 2727.97
+offset_bottom = 1896.33
+
+[node name="Task_control" parent="." instance=ExtResource("4_7lq1i")]
+layout_mode = 1
+offset_left = 4418.97
+offset_top = 456.332
+offset_right = 4418.97
+offset_bottom = 456.332
+
+[node name="StoreRoom_contorl" parent="." instance=ExtResource("5_umxj1")]
+offset_left = -1908.03
+offset_top = 96.3316
+offset_right = -1868.03
+offset_bottom = 136.332
+
+[node name="Jokes_Camera2D" type="Camera2D" parent="."]
+position = Vector2(3275.97, 2664.33)
+enabled = false
+zoom = Vector2(0.9, 1.03)
+
+[node name="Task_Camera2D" type="Camera2D" parent="."]
+position = Vector2(4975.04, 1272.45)
+enabled = false
+zoom = Vector2(1, 0.99)
+
+[node name="StoreRoom_Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1372.03, 920.332)
+enabled = false
+zoom = Vector2(0.96, 0.98)
+
+[node name="NoticeItem_Camera2D" type="Camera2D" parent="."]
+position = Vector2(2131.97, -1543.67)
+enabled = false
+zoom = Vector2(0.77, 0.97)

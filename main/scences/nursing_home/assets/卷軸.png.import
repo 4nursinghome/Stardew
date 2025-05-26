@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdt20gs8lwqe7"
-path="res://.godot/imported/卷軸.png-ff4732566f03531682bb94782b276791.ctex"
+path="res://.godot/imported/卷軸.png-22a0e4f2869131b40c2f57fc8eb831f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/nursing_home/assets/卷軸.png"
-dest_files=["res://.godot/imported/卷軸.png-ff4732566f03531682bb94782b276791.ctex"]
+source_file="res://assets/卷軸.png"
+dest_files=["res://.godot/imported/卷軸.png-22a0e4f2869131b40c2f57fc8eb831f1.ctex"]
 
 [params]
 

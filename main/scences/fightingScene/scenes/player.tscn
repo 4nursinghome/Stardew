@@ -85,7 +85,7 @@ metadata/_edit_group_ = true
 [node name="playerAnimation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"throw"
+animation = &"die"
 
 [node name="playerBody" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_2hs0m")

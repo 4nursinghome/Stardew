@@ -32,11 +32,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="back_to_main_Button" type="Button" parent="."]
-top_level = true
 layout_mode = 0
-offset_left = 86.0
-offset_top = 1088.0
-offset_right = 957.0
-offset_bottom = 1318.0
+offset_left = 88.0
+offset_top = 1112.0
+offset_right = 1000.0
+offset_bottom = 1352.0
 icon = ExtResource("2_iiocm")
 expand_icon = true

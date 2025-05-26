@@ -1,4 +1,5 @@
 extends Node2D
+signal button_W_L_pressed(button_name: String)
 @onready var camera = $Camera2D
 @onready var UI = $UI
 @onready var player = $player
@@ -6,29 +7,56 @@ extends Node2D
 @onready var effect = $effect
 @onready var buttons=$buttons
 @onready var win=$win
+@onready var game_over=$GameOver
 var player_stats:SkillStats=SkillStats.new()
 var enemy_stats:enemyStats=enemyStats.new()
 var shake_amount = 0.0
 var player_damage_taken = 0
 var enemy_damage_taken=0
-
+var active := false 
 func _ready():
-	win.hide()
+	var main = get_tree().current_scene
+	if main.has_signal("change_enemy"):
+		print("change_enemy")
+		main.change_scene.connect(enemy_autoAttack)
+	#win.hide()
+	#game_over.hide()
+	win.restart.connect(button)
+	win.back_to_main_pressed.connect(button)
+	game_over.back_to_main_pressed.connect(button)
+	game_over.restart.connect(button)
 	buttons.skill_pressed.connect(on_skill_triggered)
-	enemy_autoAttack()
 	player.play_idle()
-	enemy.play_idle()
 	enemy.enemy_attack.connect(player_hp_changed)
 	player.player_die.connect(player_die)
 	enemy.enemy_die.connect(enemy_die)
-func enemy_autoAttack():
-	while is_inside_tree() and player.player_current_hp>0 :
-		await get_tree().create_timer(3.0).timeout
-		enemy.throw()
+func start():
+	if active:
+		return
+	active = true
+	print("fight 正式啟動！")
+	print("🔥 start called, active =", active)
+	
+func pause():
+	active = false
+	print("⏸️ fight 暫停中")
+
+func resume():
+	if not active:
+		active = true
+		print("▶️ fight 恢復進行")
+func enemy_autoAttack(enemy_number):
+	enemy.diffEnemy(enemy_number)
+	await get_tree().create_timer(3.0).timeout
+	while is_inside_tree() and player.player_current_hp>0 and enemy.enemy_current_hp>0 :
+		await enemy.throw()
+		print(enemy_number)
 		effect.play_enemy_skill1()
+func button(button_name):
+	print(button_name)
+	emit_signal("button_W_L_pressed",button_name)
 func player_die():
-	if is_inside_tree():
-		get_tree().change_scene_to_file("res://scenes/fightingScene/scenes/game_over.tscn")
+	game_over.show()
 func player_hp_changed(damage):
 	player_damage_taken+=damage
 	UI.player_update_hp(player_damage_taken,player_stats.healthGetter())
@@ -36,6 +64,9 @@ func player_hp_changed(damage):
 func enemy_die():
 	win.show()
 func _process(delta):
+	if not active:
+		return  # 停止處理
+	# 放入你要進行的行為，例如：
 	if shake_amount > 0:
 		camera.offset = Vector2(
 		randf_range(-shake_amount, shake_amount),
@@ -56,7 +87,6 @@ func on_skill_triggered(skill_name):
 		"skill1":
 			effect.play_skill1()
 			player.throw()
-
 			enemy_damage_taken+=skill1_damage
 			trigger_camera_shake(skill1_damage)
 			enemy.take_damage(skill1_damage)

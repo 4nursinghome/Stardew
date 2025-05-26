@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://epmihyqea63"]
+
+[ext_resource type="Script" uid="uid://dhjtqrmcbf4dh" path="res://scenes/fightingScene/scenes/main.gd" id="1_2qnxh"]
+[ext_resource type="PackedScene" uid="uid://digrbv6u1skfa" path="res://scenes/fightingScene/scenes/background.tscn" id="2_s3u4f"]
+[ext_resource type="PackedScene" uid="uid://biswpsiujryww" path="res://scenes/fightingScene/scenes/UI.tscn" id="3_a8as3"]
+[ext_resource type="PackedScene" uid="uid://cq1gx33bjko34" path="res://scenes/fightingScene/scenes/buttons.tscn" id="4_1xgrd"]
+[ext_resource type="PackedScene" uid="uid://j38gya688mes" path="res://scenes/fightingScene/scenes/camera_2d.tscn" id="5_ko6d7"]
+[ext_resource type="PackedScene" uid="uid://b30ek1sib6d4i" path="res://scenes/fightingScene/scenes/player.tscn" id="6_xvji8"]
+[ext_resource type="PackedScene" uid="uid://cixltfcbe6r6a" path="res://scenes/fightingScene/scenes/enemy.tscn" id="7_lmmk4"]
+[ext_resource type="PackedScene" uid="uid://dlrt5jmvk003b" path="res://scenes/fightingScene/scenes/effect.tscn" id="8_xtjw1"]
+[ext_resource type="PackedScene" uid="uid://bgeugsjjxkb6d" path="res://scenes/fightingScene/scenes/win.tscn" id="9_v1fro"]
+[ext_resource type="PackedScene" uid="uid://s7xw6asrdv4q" path="res://scenes/fightingScene/scenes/game_over.tscn" id="10_n5y2m"]
+
+[node name="fight" type="Node2D"]
+script = ExtResource("1_2qnxh")
+
+[node name="background" parent="." instance=ExtResource("2_s3u4f")]
+show_behind_parent = true
+
+[node name="UI" parent="." instance=ExtResource("3_a8as3")]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 1076.0
+offset_bottom = 1707.0
+metadata/_edit_use_anchors_ = true
+
+[node name="buttons" parent="." instance=ExtResource("4_1xgrd")]
+offset_left = -24.0
+offset_top = 56.0
+offset_right = 1056.0
+offset_bottom = 1736.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" parent="." instance=ExtResource("5_ko6d7")]
+position = Vector2(-2, 0)
+enabled = false
+
+[node name="player" parent="." instance=ExtResource("6_xvji8")]
+position = Vector2(242, 928)
+
+[node name="enemy" parent="." instance=ExtResource("7_lmmk4")]
+position = Vector2(813, 928)
+
+[node name="effect" parent="." instance=ExtResource("8_xtjw1")]
+position = Vector2(-2, -59)
+
+[node name="win" parent="." instance=ExtResource("9_v1fro")]
+visible = false
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="restartButton" parent="win" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="back_to_main_Button" parent="win" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" parent="." instance=ExtResource("10_n5y2m")]
+visible = false
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="restartButton" parent="GameOver" index="1"]
+metadata/_edit_use_anchors_ = true
+
+[node name="back_to_main_Button" parent="GameOver" index="2"]
+metadata/_edit_use_anchors_ = true
+
+[editable path="win"]
+[editable path="GameOver"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgeugsjjxkb6d"]
+
+[ext_resource type="Texture2D" uid="uid://14o6m1gvmfsu" path="res://scenes/fightingScene/restart_button_en.png" id="1_826fv"]
+[ext_resource type="Script" uid="uid://ds1xxyu0fegx5" path="res://scenes/fightingScene/scenes/win.gd" id="1_yxbqr"]
+[ext_resource type="Texture2D" uid="uid://db7eu3c27am8g" path="res://scenes/fightingScene/backgrounds/victory.png" id="2_urpfv"]
+[ext_resource type="Texture2D" uid="uid://bureupqbunj80" path="res://scenes/fightingScene/backgrounds/back_to_farm_button.png" id="4_uv0yy"]
+
+[node name="win" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+offset_bottom = -1536.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_yxbqr")
+
+[node name="victory" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-29, -94)
+scale = Vector2(1.10547, 1.16797)
+texture = ExtResource("2_urpfv")
+centered = false
+
+[node name="restartButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 791.0
+offset_right = 930.0
+offset_bottom = 1048.0
+icon = ExtResource("1_826fv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="back_to_main_Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 168.0
+offset_top = 928.0
+offset_right = 912.0
+offset_bottom = 1184.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("4_uv0yy")
+expand_icon = true

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdyt4yb1trelm"]
+
+[ext_resource type="Texture2D" uid="uid://kwgbu1kmv5lf" path="res://scenes/fightingScene/skillBackground1.jpg" id="1_v5gdm"]
+
+[node name="skillBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="phrase1" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(540, 840)
+scale = Vector2(0.391304, 0.377698)
+texture = ExtResource("1_v5gdm")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://35bwowg25s76"]
+
+[ext_resource type="Texture2D" path="res://ChatGPT Image 2025年4月26日 下午01_47_17.png" id="1_kcbqp"]
+[ext_resource type="Texture2D" uid="uid://ddn4quur1m8o3" path="res://scenes/fightingScene/ChatGPT Image 2025年4月26日 下午02_00_21.png" id="2_iy0sg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="EscapeIcon" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kcbqp")
+
+[node name="BagIcon" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_iy0sg")

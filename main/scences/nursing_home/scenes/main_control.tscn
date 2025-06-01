@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv1v0tpk3j8kk"]
+[gd_scene load_steps=6 format=3 uid="uid://bv1v0tpk3j8kk"]
 
 [ext_resource type="Script" uid="uid://dn8dpkk46blfm" path="res://scenes/nursing_home/scenes/main_control.gd" id="1_4v3x4"]
 [ext_resource type="PackedScene" uid="uid://cvqoiyjbqrpax" path="res://scenes/nursing_home/scenes/NoticeItem.tscn" id="1_8jdwr"]
-[ext_resource type="PackedScene" uid="uid://jq1d20xle87d" path="res://scenes/nursing_home/scenes/GlobalBGM.tscn" id="2_4v3x4"]
 [ext_resource type="PackedScene" uid="uid://c56afwi6smbbn" path="res://scenes/nursing_home/scenes/Jokes.tscn" id="3_sqeji"]
 [ext_resource type="PackedScene" uid="uid://s8du5lcibl2t" path="res://scenes/nursing_home/scenes/TaskScene.tscn" id="4_7lq1i"]
 [ext_resource type="PackedScene" uid="uid://8ionauann4ba" path="res://scenes/nursing_home/scenes/WarehouseScene.tscn" id="5_umxj1"]
@@ -26,8 +25,6 @@ anchor_left = 2.29998
 anchor_top = -0.896747
 anchor_right = 2.29998
 anchor_bottom = -0.835019
-
-[node name="Bgm_control" parent="." instance=ExtResource("2_4v3x4")]
 
 [node name="Jokes_control" parent="." instance=ExtResource("3_sqeji")]
 layout_mode = 1
@@ -65,6 +62,6 @@ enabled = false
 zoom = Vector2(0.96, 0.98)
 
 [node name="NoticeItem_Camera2D" type="Camera2D" parent="."]
-position = Vector2(2131.97, -1543.67)
+position = Vector2(2141, -1408)
 enabled = false
 zoom = Vector2(0.77, 0.97)

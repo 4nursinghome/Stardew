@@ -44,8 +44,8 @@ scale = Vector2(1.38281, 1.13542)
 texture = ExtResource("1_hatms")
 
 [node name="wooden_bulletin_board" type="Sprite2D" parent="MarginContainer/HBoxContainer"]
-position = Vector2(-119.44, -298.5)
-scale = Vector2(1.01941, 1.02799)
+position = Vector2(-125.5, -250.634)
+scale = Vector2(1.25, 1.09031)
 texture = ExtResource("3_5sj0m")
 
 [node name="Task_paper_image_without_text" type="Sprite2D" parent="MarginContainer/HBoxContainer"]
@@ -53,10 +53,10 @@ position = Vector2(-566, -112)
 scale = Vector2(0.368165, 0.337891)
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Task_paper_image_without_text"]
-offset_left = 262.111
-offset_top = -1823.07
-offset_right = 1348.11
-offset_bottom = -687.069
+offset_left = 67.0
+offset_top = -1823.0
+offset_right = 1262.0
+offset_bottom = -584.0
 texture_normal = ExtResource("1_kyl1q")
 stretch_mode = 0
 
@@ -64,19 +64,19 @@ stretch_mode = 0
 modulate = Color(0.38216, 0.160023, 0.00754553, 1)
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
-offset_left = 347.67
-offset_top = 473.525
-offset_right = 987.67
-offset_bottom = 914.525
+offset_left = 382.98
+offset_top = 526.796
+offset_right = 1022.98
+offset_bottom = 967.796
 theme_override_font_sizes/font_size = 180
 text = "Task"
 script = ExtResource("2_hatms")
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer/Task_paper_image_without_text"]
-offset_left = 1131.29
-offset_top = -1823.07
-offset_right = 2261.29
-offset_bottom = -663.069
+offset_left = 1131.0
+offset_top = -1823.0
+offset_right = 2370.0
+offset_bottom = -560.0
 texture_normal = ExtResource("1_kyl1q")
 stretch_mode = 0
 
@@ -84,10 +84,10 @@ stretch_mode = 0
 modulate = Color(0.38216, 0.160023, 0.00754553, 1)
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 0
-offset_left = 325.938
-offset_top = 497.203
-offset_right = 1005.94
-offset_bottom = 753.203
+offset_left = 369.397
+offset_top = 532.717
+offset_right = 1049.4
+offset_bottom = 788.717
 theme_override_font_sizes/font_size = 180
 text = "Jokes"
 script = ExtResource("2_hatms")

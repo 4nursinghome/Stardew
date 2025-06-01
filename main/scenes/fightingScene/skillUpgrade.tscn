@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://den4x5uqs0wye"]
+
+[ext_resource type="PackedScene" uid="uid://bdyt4yb1trelm" path="res://scenes/fightingScene/scenes/skill_background.tscn" id="1_xyrb7"]
+[ext_resource type="PackedScene" uid="uid://dynbeo5j5bg6o" path="res://scenes/fightingScene/scenes/skill_upgrade_placement.tscn" id="2_gvqib"]
+
+[node name="skillUpgradeMain" type="Node2D"]
+
+[node name="skillBackground" parent="." instance=ExtResource("1_xyrb7")]
+show_behind_parent = true
+
+[node name="skillUpgradePlacement" parent="." instance=ExtResource("2_gvqib")]
+
+[node name="skill1" parent="skillUpgradePlacement" index="0"]
+position = Vector2(26, 105)
+
+[node name="skill2" parent="skillUpgradePlacement" index="1"]
+position = Vector2(16, 52)
+
+[node name="ULT" parent="skillUpgradePlacement" index="2"]
+position = Vector2(-16, -608)
+scale = Vector2(1.4, 1.4)
+
+[node name="special" parent="skillUpgradePlacement" index="3"]
+position = Vector2(-249, -449)
+scale = Vector2(1.3, 1.3)
+
+[editable path="skillUpgradePlacement"]

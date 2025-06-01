@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyuou2ijtvjuo"]
+
+[ext_resource type="Texture2D" uid="uid://bpv3er43n2ss0" path="res://background/road001.png" id="1_whr0p"]
+
+[node name="s_road" type="Node2D"]
+
+[node name="s_road001" type="Sprite2D" parent="."]
+position = Vector2(24, 815)
+texture = ExtResource("1_whr0p")
+
+[node name="s_road002" type="Sprite2D" parent="."]
+position = Vector2(368, 815)
+texture = ExtResource("1_whr0p")
+
+[node name="s_road003" type="Sprite2D" parent="."]
+position = Vector2(712, 815)
+texture = ExtResource("1_whr0p")
+
+[node name="s_road004" type="Sprite2D" parent="."]
+position = Vector2(1056, 815)
+texture = ExtResource("1_whr0p")

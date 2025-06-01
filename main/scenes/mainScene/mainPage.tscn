@@ -1,0 +1,170 @@
+[gd_scene load_steps=19 format=3 uid="uid://brdks3clq5d2f"]
+
+[ext_resource type="Script" uid="uid://cejomuh0v422v" path="res://scenes/mainScene/main_page.gd" id="1_v18h2"]
+[ext_resource type="Texture2D" uid="uid://ca8gcvxay404r" path="res://background/newmain.jpg" id="2_v18h2"]
+[ext_resource type="Texture2D" uid="uid://cx6fpvan7drk2" path="res://house/storage.png" id="3_8gku1"]
+[ext_resource type="PackedScene" uid="uid://ca8rbd2umbk01" path="res://scenes/mainScene/house.tscn" id="4_j0msa"]
+[ext_resource type="PackedScene" uid="uid://5x3js6en5gl3" path="res://scenes/mainScene/h_road.tscn" id="5_v18h2"]
+[ext_resource type="PackedScene" uid="uid://dyuou2ijtvjuo" path="res://scenes/mainScene/s_road.tscn" id="6_hte70"]
+[ext_resource type="PackedScene" uid="uid://cbcay5t2kitoo" path="res://scenes/mainScene/button.tscn" id="7_jhjir"]
+[ext_resource type="PackedScene" uid="uid://cmfl352w7ad53" path="res://scenes/mainScene/icon.tscn" id="8_j4pdi"]
+[ext_resource type="Script" uid="uid://cjqhsvtqrdhg1" path="res://scenes/mainScene/time.gd" id="9_v18h2"]
+[ext_resource type="Texture2D" uid="uid://dm6rmf73guf0c" path="res://scenes/mainScene/Loading.png" id="10_jhjir"]
+[ext_resource type="Texture2D" uid="uid://c6knpkky4uthb" path="res://scenes/mainScene/loading (2).PNG" id="11_j4pdi"]
+
+[sub_resource type="Theme" id="Theme_v18h2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eax8f"]
+atlas = ExtResource("11_j4pdi")
+region = Rect2(0, 0, 477, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smsam"]
+atlas = ExtResource("11_j4pdi")
+region = Rect2(0, 276, 477, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmr1b"]
+atlas = ExtResource("11_j4pdi")
+region = Rect2(0, 552, 477, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itrvv"]
+atlas = ExtResource("11_j4pdi")
+region = Rect2(0, 828, 477, 276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhjir"]
+atlas = ExtResource("11_j4pdi")
+region = Rect2(0, 1380, 477, 276)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbjhd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eax8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smsam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmr1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itrvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhjir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="mainPage" type="Node2D"]
+script = ExtResource("1_v18h2")
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="background001" type="Sprite2D" parent="background"]
+position = Vector2(540, 765.5)
+scale = Vector2(1, 0.996745)
+texture = ExtResource("2_v18h2")
+
+[node name="Storage" type="Sprite2D" parent="."]
+position = Vector2(194.75, 1158.75)
+scale = Vector2(1.4925, 1.5075)
+texture = ExtResource("3_8gku1")
+
+[node name="h_road" parent="." instance=ExtResource("5_v18h2")]
+
+[node name="h_road004" parent="h_road" index="3"]
+position = Vector2(540, 312)
+
+[node name="s_road" parent="." instance=ExtResource("6_hte70")]
+
+[node name="button" parent="." instance=ExtResource("7_jhjir")]
+offset_left = -24.0
+offset_right = 1096.0
+mouse_filter = 1
+
+[node name="mainPageIcon" parent="." instance=ExtResource("8_j4pdi")]
+mouse_filter = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="house" parent="." instance=ExtResource("4_j0msa")]
+
+[node name="Building009" parent="house" index="0"]
+position = Vector2(208, 48)
+
+[node name="Building008" parent="house" index="1"]
+position = Vector2(136, 40)
+
+[node name="mask" parent="house/Building008" index="2"]
+position = Vector2(410, 439.5)
+scale = Vector2(0.536, 0.51)
+
+[node name="Building007" parent="house" index="2"]
+position = Vector2(56, 48)
+
+[node name="mask" parent="house/Building007" index="2"]
+position = Vector2(157, 424)
+scale = Vector2(0.524, 0.64)
+
+[node name="Building006" parent="house" index="3"]
+position = Vector2(216, 120)
+
+[node name="building005" parent="house/Building006" index="1"]
+position = Vector2(672, 690.5)
+scale = Vector2(0.48, 0.522)
+
+[node name="mask" parent="house/Building006" index="2"]
+position = Vector2(672, 690.75)
+scale = Vector2(0.48, 0.533)
+
+[node name="Building005" parent="house" index="4"]
+position = Vector2(-384, -128)
+
+[node name="mask" parent="house/Building005" index="2"]
+scale = Vector2(0.576, 0.426625)
+
+[node name="Building004" parent="house" index="5"]
+position = Vector2(-464, -112)
+
+[node name="mask" parent="house/Building004" index="2"]
+position = Vector2(672, 904)
+scale = Vector2(0.48, 0.64)
+
+[node name="Building003" parent="house" index="6"]
+position = Vector2(-48, -40)
+
+[node name="mask" parent="house/Building003" index="2"]
+position = Vector2(928, 1176)
+
+[node name="Building002" parent="house" index="7"]
+position = Vector2(-136, -40)
+
+[node name="time" type="Label" parent="."]
+offset_left = 464.0
+offset_top = 152.0
+offset_right = 1072.0
+offset_bottom = 288.0
+theme = SubResource("Theme_v18h2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("9_v18h2")
+
+[node name="Loading" type="Node2D" parent="."]
+position = Vector2(536, 768)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Loading"]
+position = Vector2(5.5, 0)
+scale = Vector2(1.01019, 1)
+texture = ExtResource("10_jhjir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Loading"]
+sprite_frames = SubResource("SpriteFrames_wbjhd")
+
+[editable path="h_road"]
+[editable path="s_road"]
+[editable path="house"]

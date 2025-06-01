@@ -1,0 +1,182 @@
+[gd_scene load_steps=20 format=3 uid="uid://ca8rbd2umbk01"]
+
+[ext_resource type="Texture2D" uid="uid://2i4sup0ougaw" path="res://house/building 001.png" id="1_abp1d"]
+[ext_resource type="Script" uid="uid://ci1crrwd44v1t" path="res://scenes/mainScene/house.gd" id="1_i3b8e"]
+[ext_resource type="Script" uid="uid://dohe7btqvupj7" path="res://scenes/mainScene/building_001.gd" id="2_hdpf4"]
+[ext_resource type="Texture2D" uid="uid://c81kc7bj5ddja" path="res://house/building 002.png" id="3_hdpf4"]
+[ext_resource type="Texture2D" uid="uid://ctat77n8t34q3" path="res://house/IMG_2265.PNG" id="5_hdpf4"]
+[ext_resource type="Texture2D" uid="uid://3tm3anxl8nrr" path="res://house/building 005.png" id="6_jcqqc"]
+[ext_resource type="Texture2D" uid="uid://g7onr35gjvfg" path="res://house/building 006.png" id="7_bh034"]
+[ext_resource type="Texture2D" uid="uid://cc4m4xqfm7asu" path="res://house/IMG_2266.PNG" id="7_jw1rt"]
+[ext_resource type="Texture2D" uid="uid://dq0p2f4gyqn5v" path="res://house/IMG_2267.PNG" id="9_27gj4"]
+[ext_resource type="Texture2D" uid="uid://cv57c4uxieb7t" path="res://house/building 009.png" id="10_fbhrb"]
+[ext_resource type="Texture2D" uid="uid://b51x2l42cklav" path="res://house/IMG_2268.PNG" id="11_jcqqc"]
+[ext_resource type="Texture2D" uid="uid://d4fk6pa3aicic" path="res://house/building 011.png" id="12_b1oeo"]
+[ext_resource type="Texture2D" uid="uid://d272t0f5tio0l" path="res://house/building 012.png" id="13_5q0f0"]
+[ext_resource type="Texture2D" uid="uid://5awfbs7ufbos" path="res://house/IMG_2269.PNG" id="13_bh034"]
+[ext_resource type="Texture2D" uid="uid://bb3op288dq4rd" path="res://house/building 013.png" id="14_tutw5"]
+[ext_resource type="Texture2D" uid="uid://bkvrowsdgjuh2" path="res://house/IMG_2270.PNG" id="15_mfpae"]
+[ext_resource type="Texture2D" uid="uid://djw2dcvdy8kr6" path="res://house/IMG_2271.PNG" id="17_h2qkl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kontj"]
+size = Vector2(304, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptp2n"]
+size = Vector2(657.778, 460.064)
+
+[node name="house" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i3b8e")
+
+[node name="Building009" type="Area2D" parent="."]
+position = Vector2(216, -120)
+script = ExtResource("2_hdpf4")
+metadata/_edit_group_ = true
+
+[node name="building008" type="Sprite2D" parent="Building009"]
+position = Vector2(669.5, 436.5)
+scale = Vector2(0.586, 0.53)
+texture = ExtResource("14_tutw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building009"]
+position = Vector2(672, 440)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="mask" type="Sprite2D" parent="Building009"]
+position = Vector2(669.844, 432)
+scale = Vector2(0.584625, 0.56525)
+texture = ExtResource("17_h2qkl")
+
+[node name="Building008" type="Area2D" parent="."]
+position = Vector2(120, -120)
+script = ExtResource("2_hdpf4")
+metadata/_edit_group_ = true
+
+[node name="building007" type="Sprite2D" parent="Building008"]
+position = Vector2(411.5, 438)
+scale = Vector2(0.53, 0.508)
+texture = ExtResource("13_5q0f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building008"]
+position = Vector2(408, 440)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="mask" type="Sprite2D" parent="Building008"]
+position = Vector2(412, 438)
+scale = Vector2(0.528, 0.508)
+texture = ExtResource("15_mfpae")
+
+[node name="Building007" type="Area2D" parent="."]
+position = Vector2(40, -224)
+script = ExtResource("2_hdpf4")
+
+[node name="building006" type="Sprite2D" parent="Building007"]
+position = Vector2(159.5, 424)
+scale = Vector2(0.514, 0.64)
+texture = ExtResource("12_b1oeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building007"]
+position = Vector2(144, 440)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="mask" type="Sprite2D" parent="Building007"]
+position = Vector2(156, 424)
+scale = Vector2(0.528, 0.64)
+texture = ExtResource("13_bh034")
+metadata/_edit_group_ = true
+
+[node name="Building006" type="Area2D" parent="."]
+position = Vector2(232, 72)
+script = ExtResource("2_hdpf4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building006"]
+position = Vector2(672, 688)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="building005" type="Sprite2D" parent="Building006"]
+position = Vector2(668.5, 691.5)
+scale = Vector2(0.466, 0.518)
+texture = ExtResource("10_fbhrb")
+
+[node name="mask" type="Sprite2D" parent="Building006"]
+position = Vector2(668, 690.5)
+scale = Vector2(0.464, 0.522)
+texture = ExtResource("11_jcqqc")
+
+[node name="Building005" type="Area2D" parent="."]
+position = Vector2(-400, -184)
+script = ExtResource("2_hdpf4")
+metadata/_edit_group_ = true
+
+[node name="building004" type="Sprite2D" parent="Building005"]
+position = Vector2(929, 943)
+scale = Vector2(0.592, 0.416)
+texture = ExtResource("7_bh034")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building005"]
+position = Vector2(928, 944)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="mask" type="Sprite2D" parent="Building005"]
+position = Vector2(928, 944)
+scale = Vector2(0.58, 0.416)
+texture = ExtResource("9_27gj4")
+
+[node name="Building004" type="Area2D" parent="."]
+position = Vector2(-472, -184)
+script = ExtResource("2_hdpf4")
+
+[node name="building003" type="Sprite2D" parent="Building004"]
+position = Vector2(668.5, 906)
+scale = Vector2(0.466, 0.644)
+texture = ExtResource("6_jcqqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building004"]
+position = Vector2(664, 936)
+shape = SubResource("RectangleShape2D_kontj")
+disabled = true
+
+[node name="mask" type="Sprite2D" parent="Building004"]
+position = Vector2(664, 912)
+scale = Vector2(0.47, 0.657)
+texture = ExtResource("7_jw1rt")
+
+[node name="Building003" type="Area2D" parent="."]
+position = Vector2(-56, 0)
+script = ExtResource("2_hdpf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building003"]
+position = Vector2(927, 1194.06)
+scale = Vector2(0.45, 0.626)
+shape = SubResource("RectangleShape2D_ptp2n")
+disabled = true
+
+[node name="building002" type="Sprite2D" parent="Building003"]
+position = Vector2(927.5, 1177.5)
+scale = Vector2(0.45, 0.626)
+texture = ExtResource("3_hdpf4")
+
+[node name="mask" type="Sprite2D" parent="Building003"]
+position = Vector2(927.16, 1177.62)
+scale = Vector2(0.451375, 0.6265)
+texture = ExtResource("5_hdpf4")
+
+[node name="Building002" type="Area2D" parent="."]
+position = Vector2(-136, 0)
+script = ExtResource("2_hdpf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building002"]
+position = Vector2(669.75, 1193.75)
+shape = SubResource("RectangleShape2D_kontj")
+
+[node name="building001" type="Sprite2D" parent="Building002"]
+position = Vector2(669.5, 1192.5)
+scale = Vector2(0.458, 0.554)
+texture = ExtResource("1_abp1d")

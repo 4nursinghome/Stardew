@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bilyh2g4wkmth"]
+
+[ext_resource type="Script" uid="uid://dofwu7ogpb1m2" path="res://BGM/bgm.gd" id="1_iaeaa"]
+[ext_resource type="AudioStream" uid="uid://dbo2jyb8cc4os" path="res://BGM/background_music.mp3" id="2_iaeaa"]
+[ext_resource type="AudioStream" uid="uid://cbfl247n8lm02" path="res://BGM/fighting_page_music.mp3" id="3_dx1pg"]
+
+[node name="Bgm" type="Node2D"]
+script = ExtResource("1_iaeaa")
+
+[node name="fight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dx1pg")
+
+[node name="home" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_iaeaa")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq6qmaneejq1u"]
+
+[ext_resource type="Texture2D" uid="uid://pybgh1tb2y7g" path="res://sprites/plants/tomato.png" id="1_tsxsy"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_m5p4s"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/farmScene/HarvestParticles.tscn" id="2_pjj58"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_362f4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ldso"]
+radius = 61.0
+height = 176.0
+
+[node name="tomato" type="Node2D"]
+
+[node name="tomato" type="Sprite2D" parent="."]
+position = Vector2(0, -70)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tsxsy")
+hframes = 3
+script = ExtResource("2_m5p4s")
+grow_times = 6.0
+auto_grow = false
+
+[node name="HarvestParticles" parent="." instance=ExtResource("2_pjj58")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_362f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(2.5, -44)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_1ldso")

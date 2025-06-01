@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dngc00k0svtxt"]
+
+[ext_resource type="Texture2D" uid="uid://ddueewlfex1k2" path="res://sprites/plants/carrot.png" id="1_q4v16"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_70tp8"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/farmScene/HarvestParticles.tscn" id="3_3kioh"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_y515u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y515u"]
+custom_solver_bias = 0.664
+size = Vector2(88, 222)
+
+[node name="carrrot" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="carrot" type="Sprite2D" parent="."]
+position = Vector2(0, -120)
+texture = ExtResource("1_q4v16")
+hframes = 3
+script = ExtResource("2_70tp8")
+grow_times = 3.0
+
+[node name="HarvestParticles" parent="." instance=ExtResource("3_3kioh")]
+preprocess = 1.0
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_y515u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-5, -105)
+shape = SubResource("RectangleShape2D_y515u")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6oqigvfk78bc"]
+
+[ext_resource type="Texture2D" uid="uid://dli0mvnpamm05" path="res://sprites/plants/onion.png" id="1_54n37"]
+[ext_resource type="Script" uid="uid://bpbov01t3l1ii" path="res://script/Crop.gd" id="2_wpmb3"]
+[ext_resource type="PackedScene" uid="uid://wpamfsrh4f4q" path="res://scenes/farmScene/HarvestParticles.tscn" id="3_exj4b"]
+[ext_resource type="Script" uid="uid://cmtot0sjvqm7g" path="res://script/ClickArea.gd" id="4_vct2s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbo01"]
+radius = 25.0
+height = 116.0
+
+[node name="onion" type="Node2D"]
+
+[node name="onion" type="Sprite2D" parent="."]
+position = Vector2(0, -60)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_54n37")
+hframes = 3
+script = ExtResource("2_wpmb3")
+grow_times = 9.0
+auto_grow = false
+
+[node name="HarvestParticles" parent="." instance=ExtResource("3_exj4b")]
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_vct2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(1, -58)
+shape = SubResource("CapsuleShape2D_gbo01")

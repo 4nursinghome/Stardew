@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3sqc64o4g0jp"]
+
+[ext_resource type="Script" uid="uid://bddt65bsck7iw" path="res://scenes/combined_main.gd" id="1_ki8h4"]
+[ext_resource type="PackedScene" uid="uid://crt7j6hruto5n" path="res://scenes/farmScene/farm.tscn" id="2_hqtkw"]
+[ext_resource type="PackedScene" uid="uid://brdks3clq5d2f" path="res://scenes/mainScene/mainPage.tscn" id="3_vbdgb"]
+[ext_resource type="PackedScene" uid="uid://epmihyqea63" path="res://scenes/fightingScene/scenes/fight.tscn" id="4_hqtkw"]
+[ext_resource type="PackedScene" uid="uid://bv1v0tpk3j8kk" path="res://scenes/nursing_home/scenes/main_control.tscn" id="5_vbdgb"]
+[ext_resource type="PackedScene" uid="uid://dynbeo5j5bg6o" path="res://scenes/fightingScene/scenes/skill_upgrade_placement.tscn" id="6_h2egn"]
+[ext_resource type="Script" uid="uid://dilgqmvx5hhhc" path="res://scenes/press_detect.gd" id="7_50ub5"]
+[ext_resource type="PackedScene" uid="uid://bilyh2g4wkmth" path="res://BGM/Bgm.tscn" id="8_rvch0"]
+
+[node name="combinedMain" type="Node2D"]
+script = ExtResource("1_ki8h4")
+
+[node name="mainPage" parent="." instance=ExtResource("3_vbdgb")]
+position = Vector2(-5464, 1616)
+
+[node name="farm" parent="." instance=ExtResource("2_hqtkw")]
+position = Vector2(-6832, -2552)
+
+[node name="Main_contorl" parent="." instance=ExtResource("5_vbdgb")]
+offset_left = -1486.0
+offset_top = 4392.0
+offset_right = -1486.0
+offset_bottom = 4392.0
+mouse_filter = 2
+
+[node name="Farm_Button" parent="Main_contorl/NoticeItem_control" index="1"]
+offset_left = -418.0
+offset_top = 88.0
+offset_right = -128.0
+offset_bottom = 378.0
+
+[node name="Home_Button" parent="Main_contorl/NoticeItem_control" index="2"]
+offset_left = -674.0
+offset_top = 104.0
+offset_right = -418.0
+offset_bottom = 360.0
+
+[node name="Task_control" parent="Main_contorl" index="2"]
+metadata/_edit_group_ = true
+
+[node name="StoreRoom_contorl" parent="Main_contorl" index="3"]
+offset_left = 1518.0
+offset_top = -128.0
+offset_right = 1558.0
+offset_bottom = -87.9995
+
+[node name="Jokes_Camera2D" parent="Main_contorl" index="4"]
+position = Vector2(3278, 2656)
+
+[node name="Task_Camera2D" parent="Main_contorl" index="5"]
+metadata/_edit_group_ = true
+
+[node name="StoreRoom_Camera2D" parent="Main_contorl" index="6"]
+position = Vector2(2054, 680)
+
+[node name="NoticeItem_Camera2D" parent="Main_contorl" index="7"]
+position = Vector2(-346, 1120)
+
+[node name="skillUpgradePlacement" parent="." instance=ExtResource("6_h2egn")]
+offset_left = -2936.0
+offset_right = -2936.0
+
+[node name="fight" parent="." instance=ExtResource("4_hqtkw")]
+
+[node name="dialogue" parent="fight" index="7"]
+top_level = true
+offset_left = -2.0
+offset_right = 1078.0
+
+[node name="press_detect" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -8208.0
+offset_top = -4552.0
+offset_right = 4280.0
+offset_bottom = 7976.0
+focus_mode = 1
+mouse_filter = 1
+script = ExtResource("7_50ub5")
+
+[node name="Bgm" parent="." instance=ExtResource("8_rvch0")]
+
+[editable path="Main_contorl"]
+[editable path="Main_contorl/NoticeItem_control"]
+[editable path="fight"]
+[editable path="fight/GameOver"]
+[editable path="fight/win"]
+[editable path="Bgm"]

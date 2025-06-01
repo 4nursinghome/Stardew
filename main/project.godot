@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 StoreStage="*res://script/StoreStage.gd"
 GlobalProperty="*res://script/GlobalProperty.gd"
+EnemyStats="*res://scenes/fightingScene/enemyStats.gd"
+skillStats="*res://scenes/fightingScene/scenes/skillStats.gd"
+GlobalSfx="*res://Global/GlobalSFX.gd"
 
 [display]
 

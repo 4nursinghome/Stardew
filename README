@@ -1,54 +1,64 @@
 ## Ataraxia
-> Ataraxia 是一款融合農場經營、角色冒險與哲學對話的像素風遊戲，構築在一個表面平靜卻潛藏控制機制的數位烏托邦中。
+> Ataraxia is a pixel-art game that combines farming management, character-driven adventure, and philosophical dialogue, set in a seemingly peaceful but deeply controlled digital utopia.
 
-## 專案簡介
-> 在這個世界裡，陽光恆照、居民被妥善照料，一切看似理想。然而，隨著玩家與居民展開對話、完成任務、參與日常耕作與戰鬥，將逐漸揭示一個更深層的真相：
-  在這個由shinx主導的封閉循環中，夢被視為威脅而遭到抹除，自由則被重塑為服從的假象。表面上的和平，其實是以人性為代價所交換的秩序幻象。
-  Ataraxia 以多線敘事、互動式對話與極簡像素視覺，打造一個富有哲學與倫理辯證的數位樂園，玩家不只是經營者，更是探索者與懷疑者。
+## Project Overview
+> In this world, the sun always shines and residents are well taken care of—everything appears ideal. However, as players engage in conversations, complete quests, farm, and fight, a deeper truth gradually unfolds:  
+  In this closed-loop system governed by *shinx*, dreams are erased as threats, and freedom is redefined as obedient illusion.  
+  The peace on the surface is, in fact, a fragile illusion paid for with the price of humanity.  
+  Ataraxia utilizes nonlinear storytelling, interactive dialogue, and minimalist pixel visuals to create a digital playground filled with ethical and philosophical dilemmas. Players are not just caretakers—they are explorers and skeptics.
 
-## 核心功能
-#👨‍🌾 FarmPage：農場系統
-- 可種植多樣作物：`carrot`, `cabbage`, `beet`, `tomato`, `corn`, `pumpkin`, `onion`, `broccoli`, `cat`
-- 每種作物有不同生長時間與收成獎勵
-- 點擊互動式收割，操作直覺
-- 收成自動進入倉庫（Storage），可用於完成任務
-#⚔️ FightingPage：戰鬥系統
-- 關卡制對戰，逐步解鎖敵人
-- 技能具冷卻與動畫特效，兼具策略與視覺
-#📜 TaskBoard：任務系統
-- 即時顯示目標與庫存進度
-- 完成任務可獲得金幣，用於技能升級與農田擴張
-#🪙 金幣與資源管理
-- 倉庫動態顯示與查詢功能
-- UI 左上角即時同步金幣數量
-# 😄 Joke 系統
-- 點擊選擇清單即可看到根據不同條件排序的爛笑話(笑話標題來自各組員英文名字的首字母)
-# 🕰️ 時間系統
-- 主頁右上顯示與系統同步的即時時間
-# 🖼️ 劇情互動
-- 內建角色對話（如 Resident 與 Shinx），探討記憶、自我、秩序與控制
+## Core Features
 
-## 技術架構
-- 遊戲引擎：Godot 4.4
-- 開發語言：GDScript
-- 美術風格：像素
-- 資料傳遞：全域 signal 機制處理切換與同步
-- 版本控管：GitHub / Google 雲端硬碟
+# 👨‍🌾 FarmPage: Farming System
+- Grow a variety of crops: `carrot`, `cabbage`, `beet`, `tomato`, `corn`, `pumpkin`, `onion`, `broccoli`, `cat`
+- Each crop has different growth times and reward values
+- Intuitive click-based harvesting
+- Harvested crops are sent to Storage and used to complete missions
 
-## 團隊成員與分工
-| 成員   | 負責項目                                                                                                                                  | 整體project貢獻占比  |
-|--------|------------------------------------------------------------------------------------------------------------------------------------------| --------------------|
-| Nathan | 完整的 FightingPage 頁面製作、 完整的 SkillPage 頁面製作、進階主頁面邏輯修改、整合所有人檔案並改用 signal 傳遞訊息、debug 、遊戲音效程式、遊戲設定 |         40%         |
-| Angel  | 完整的 FarmPage 頁面、進階 Storage 與 Joke 頁面程式設計、金幣相關與倉庫系統程式設計、美術總指導、期末報告製作 、遊戲設定                          |         30%         |
-| Honora | 初步主頁面設計、美術組成員、進階 Task 程式設計、即時時間顯示功能、劇情設計、期末影片剪輯 、遊戲設定                                               |         25%         |
-| Chouch | 初步 NoticePage 設計、期中影片剪輯                                                                                                          |         5%          |
+# ⚔️ FightingPage: Combat System
+- Stage-based combat system with gradually unlocked enemies
+- Skills have cooldowns and animation effects, emphasizing strategy and visuals
 
-## 協作工具與開發流程
-- 設計工具：Godot(程式設計)、ChatGPT+人工調整(美術設計)  
-- 通訊平台：LINE / Discord  
-- 版本管理：GitHub + Google Drive 備份  
-- 任務分配與整合：訊息傳遞統一採 signal 制控制頁面狀態與資料同步  
- 
-## 遊戲特色亮點
-- 敘事與角色互動，融入哲學性辯證，反烏托邦風格，呈現控制社會下的理性與虛幻
-- 直覺農作 + 手動戰鬥，兼具放置與操作樂趣
+# 📜 TaskBoard: Quest System
+- Real-time display of crop goals and inventory
+- Completing quests rewards players with coins, used for skill upgrades and field expansion
+
+# 🪙 Currency & Resource Management
+- Storage includes dynamic display and search functionality
+- Coin count is updated in real time at the top-left of the UI
+
+# 😄 Joke System
+- Select from a categorized joke list based on team members’ name initials
+- Jokes include "dad jokes" and pun-based English humor
+
+# 🕰️ Time System
+- Real-time in-game clock synced with the player’s system time, displayed at top-right
+
+# 🖼️ Story & Dialogue
+- Features character dialogue (e.g., between Resident and Shinx) that explores themes of memory, identity, order, and control
+
+## Technical Architecture
+- Game Engine: Godot 4.4  
+- Language: GDScript  
+- Art Style: Pixel-based  
+- Data Handling: Global signal system for page transitions and state sync  
+- Version Control: GitHub / Google Drive  
+
+## Team Members & Responsibilities
+
+Student ID | Member  | Responsibilities                                                                                                                        | Contribution |
+-----------|---------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
+413910001  | Nathan  | Full implementation of FightingPage & SkillPage, advanced homepage logic, signal-based integration, debugging, game sound & config      | 40%          |
+413910003  | Angel   | Full implementation of FarmPage, advanced design of Storage & Joke pages, coin/warehouse systems, art lead, final report, game config   | 30%          |
+413910017  | Honora  | Initial homepage design, art contributor, advanced TaskBoard logic, time display, storyline design, final video editing, game config    | 25%          |
+413910012  | Chouch  | Initial design of NoticePage, midterm video editing                                                                                     | 5%           |
+
+## Collaboration Tools & Workflow
+- Design Tools: Godot (coding), ChatGPT + manual refinement (art design)  
+- Communication: LINE / Discord  
+- Version Management: GitHub + Google Drive backups  
+- Task Management & Integration: Page transitions and state synchronization handled via global signals  
+
+## Game Highlights
+- Story and character interactions explore philosophical and ethical questions in a dystopian digital world  
+- Hands-on farming + tap-based battle mechanics, blending casual idle play with active engagement

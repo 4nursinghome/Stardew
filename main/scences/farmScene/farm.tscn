@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crt7j6hruto5n"]
+[gd_scene load_steps=27 format=3 uid="uid://crt7j6hruto5n"]
 
 [ext_resource type="Script" uid="uid://ftdww5ggtxt1" path="res://script/HarvestManager.gd" id="1_264po"]
 [ext_resource type="Texture2D" uid="uid://djkl7a0jdumpp" path="res://sprites/farmland/background_farm.PNG" id="1_yqjtg"]
@@ -21,9 +21,17 @@
 [ext_resource type="Script" uid="uid://8pdy5q7rry7d" path="res://script/CoinLabel.gd" id="19_5newe"]
 [ext_resource type="Script" uid="uid://cgsmw84qgxo71" path="res://scenes/mainScene/home_button.gd" id="19_utxq6"]
 [ext_resource type="Script" uid="uid://bjvfnryombqfu" path="res://scenes/farmScene/farm_button.gd" id="19_uwqxl"]
+[ext_resource type="Script" uid="uid://dkqeyocykoh14" path="res://scenes/farmScene/storage_button.gd" id="20_tvdvb"]
+[ext_resource type="Script" uid="uid://cnkichomusvoj" path="res://scenes/farmScene/board_button.gd" id="22_bwh8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnlei"]
-size = Vector2(140, 116.667)
+size = Vector2(136.667, 116.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dchse"]
+size = Vector2(266.667, 120.521)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwqxl"]
+size = Vector2(263.333, 125)
 
 [node name="farm" type="Node2D"]
 scale = Vector2(2.4, 2.4)
@@ -251,14 +259,6 @@ position = Vector2(327, -180.333)
 crop_nodes = Array[NodePath]([NodePath("../cat"), NodePath("../cat/cat2"), NodePath("../cat/cat3"), NodePath("../cat/cat4")])
 unlock_cost = 60
 
-[node name="MissingBoard" type="Sprite2D" parent="."]
-position = Vector2(-246, 670)
-texture = ExtResource("15_pl11u")
-
-[node name="StoreHouse" type="Sprite2D" parent="."]
-position = Vector2(246, 670)
-texture = ExtResource("16_bhx41")
-
 [node name="CoinLabel" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = -0.326
@@ -276,6 +276,7 @@ script = ExtResource("19_5newe")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 zoom = Vector2(0.44, 0.42)
 
 [node name="farmButton" type="Control" parent="."]
@@ -298,3 +299,29 @@ texture = ExtResource("14_e1j6l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="farmButton/homeButton"]
 position = Vector2(0, 701.667)
 shape = SubResource("RectangleShape2D_vnlei")
+
+[node name="storageButton" type="Area2D" parent="farmButton"]
+position = Vector2(0, -32.0833)
+script = ExtResource("20_tvdvb")
+metadata/_edit_group_ = true
+
+[node name="StoreHouse" type="Sprite2D" parent="farmButton/storageButton"]
+position = Vector2(246, 702.083)
+texture = ExtResource("16_bhx41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="farmButton/storageButton"]
+position = Vector2(246.667, 702.083)
+shape = SubResource("RectangleShape2D_dchse")
+
+[node name="boardButton" type="Area2D" parent="farmButton"]
+position = Vector2(-260, -33.3333)
+script = ExtResource("22_bwh8o")
+metadata/_edit_group_ = true
+
+[node name="Board" type="Sprite2D" parent="farmButton/boardButton"]
+position = Vector2(14, 703.333)
+texture = ExtResource("15_pl11u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="farmButton/boardButton"]
+position = Vector2(15, 703.333)
+shape = SubResource("RectangleShape2D_uwqxl")

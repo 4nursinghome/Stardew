@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://c56afwi6smbbn"]
+
+[ext_resource type="Script" uid="uid://b40qqsug8ufy" path="res://scenes/nursing_home/scenes/market_scene.gd" id="1_r4v8e"]
+[ext_resource type="Texture2D" uid="uid://bbn0b6akw3a0e" path="res://scenes/nursing_home/assets/背景底圖.png" id="2_kqjgc"]
+[ext_resource type="Texture2D" uid="uid://cx6s16llwtfcj" path="res://scenes/nursing_home/assets/joke.png" id="3_uo8es"]
+[ext_resource type="Texture2D" uid="uid://bsen2u074p6kf" path="res://scenes/nursing_home/assets/back_picture_256.png" id="4_qhfjt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4v8e")
+
+[node name="Background_image" type="Sprite2D" parent="."]
+position = Vector2(548, 764)
+scale = Vector2(1.17969, 1.02604)
+texture = ExtResource("2_kqjgc")
+
+[node name="Market_Trend_Bulletin_Board" type="Sprite2D" parent="."]
+position = Vector2(552, 848)
+scale = Vector2(1.04687, 0.916667)
+texture = ExtResource("3_uo8es")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.163
+anchor_top = 0.207
+anchor_right = 0.807
+anchor_bottom = 0.859
+offset_left = 439.96
+offset_top = 258.048
+offset_right = 8.44
+offset_bottom = -606.424
+theme_override_colors/font_color = Color(0.396185, 0.168656, 0.0505572, 1)
+theme_override_font_sizes/font_size = 100
+text = "Joke"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton_pic" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 272.0
+texture_normal = ExtResource("4_qhfjt")
+stretch_mode = 0
+
+[node name="JokeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 390.0
+offset_right = 861.0
+offset_bottom = 1318.0
+theme_override_colors/font_color = Color(0.618935, 0.207082, 0.172157, 1)
+theme_override_font_sizes/font_size = 33
+
+[node name="SortMenu" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 208.0
+offset_right = 696.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 30
+alignment = 1
+
+[connection signal="pressed" from="BackButton_pic" to="." method="_on_back_button_pic_pressed"]

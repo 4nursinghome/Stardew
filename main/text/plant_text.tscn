@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://dm28n68dqxtmy"]
+
+[ext_resource type="Texture2D" uid="uid://djkl7a0jdumpp" path="res://sprites/farmland/background_farm.PNG" id="1_2jwt7"]
+[ext_resource type="Texture2D" uid="uid://cs283fnrubfk8" path="res://sprites/farmland/ChatGPT_Image_2025年4月9日_下午05_23_18.png" id="2_2jqns"]
+[ext_resource type="PackedScene" uid="uid://dngc00k0svtxt" path="res://scenes/farmScene/carrrot.tscn" id="3_cr08g"]
+[ext_resource type="Script" uid="uid://8pdy5q7rry7d" path="res://script/CoinLabel.gd" id="3_vpb0a"]
+[ext_resource type="PackedScene" uid="uid://dewvrgikbeavu" path="res://scenes/farmScene/cabbage.tscn" id="4_an68s"]
+[ext_resource type="Texture2D" uid="uid://bwbm22vonrr3y" path="res://sprites/farmland/coin_title.PNG" id="5_y4ymw"]
+[ext_resource type="PackedScene" uid="uid://h3itm3gdjkdw" path="res://scenes/farmScene/beet.tscn" id="6_upkwc"]
+[ext_resource type="PackedScene" uid="uid://dq6qmaneejq1u" path="res://scenes/farmScene/tomato.tscn" id="7_bc7b5"]
+[ext_resource type="Texture2D" uid="uid://87qns18nsjln" path="res://sprites/farmland/home.PNG" id="7_knayt"]
+[ext_resource type="Texture2D" uid="uid://babiu8tju84mq" path="res://sprites/farmland/missing_board.PNG" id="8_pk03l"]
+[ext_resource type="Texture2D" uid="uid://dnkkbt75x7ejj" path="res://sprites/farmland/store_house.PNG" id="9_37jpc"]
+[ext_resource type="PackedScene" uid="uid://vjsqn0b7g08g" path="res://scenes/farmScene/corn.tscn" id="9_bc7b5"]
+[ext_resource type="PackedScene" uid="uid://bcmspvf8ynuqk" path="res://scenes/farmScene/black_farmland.tscn" id="12_bc7b5"]
+[ext_resource type="PackedScene" uid="uid://boqbf4vfbaefp" path="res://scenes/farmScene/pumpkin.tscn" id="14_dougy"]
+[ext_resource type="PackedScene" uid="uid://c6oqigvfk78bc" path="res://scenes/farmScene/onion.tscn" id="15_gsobk"]
+[ext_resource type="PackedScene" uid="uid://brcw1uxtskty" path="res://scenes/farmScene/brocoli.tscn" id="15_vexct"]
+[ext_resource type="PackedScene" uid="uid://bp7f0ldqm6dhq" path="res://scenes/farmScene/cat.tscn" id="16_vexct"]
+[ext_resource type="Script" uid="uid://ftdww5ggtxt1" path="res://script/HarvestManager.gd" id="17_bbld5"]
+[ext_resource type="SpriteFrames" uid="uid://cqem6knyvl25y" path="res://sprites/plant_icons.tres" id="18_fgxw0"]
+
+[node name="world" type="Node2D"]
+
+[node name="HarvestManager" type="Node" parent="." node_paths=PackedStringArray("popup_container")]
+script = ExtResource("17_bbld5")
+popup_container = NodePath("../UI/MessageBoard/popup_container")
+sprite_frames = ExtResource("18_fgxw0")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MessageBoard" type="Control" parent="UI"]
+layout_mode = 3
+anchor_top = -0.995
+anchor_right = 0.443
+anchor_bottom = -0.605
+offset_left = -1.0
+offset_top = -0.239929
+offset_right = -0.336029
+offset_bottom = 0.0400085
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="popup_container" type="VBoxContainer" parent="UI/MessageBoard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.481
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0710011
+offset_top = 0.105988
+offset_right = 3.05176e-05
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 5
+alignment = 2
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("1_2jwt7")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="background"]
+position = Vector2(-3, 3)
+zoom = Vector2(0.422, 0.422)
+
+[node name="CoinTitle" type="Sprite2D" parent="."]
+position = Vector2(-326, -444)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_y4ymw")
+
+[node name="farmland1" type="Sprite2D" parent="."]
+position = Vector2(-327, -137)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland2" type="Sprite2D" parent="farmland1"]
+position = Vector2(327, 0)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland3" type="Sprite2D" parent="farmland1"]
+position = Vector2(654, 0)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland4" type="Sprite2D" parent="farmland1"]
+position = Vector2(0, 309)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland5" type="Sprite2D" parent="farmland1"]
+position = Vector2(327, 309)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland6" type="Sprite2D" parent="farmland1"]
+position = Vector2(654, 309)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland7" type="Sprite2D" parent="farmland1"]
+position = Vector2(0, 618)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland8" type="Sprite2D" parent="farmland1"]
+position = Vector2(327, 618)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="farmland9" type="Sprite2D" parent="farmland1"]
+position = Vector2(654, 618)
+texture = ExtResource("2_2jqns")
+metadata/_edit_lock_ = true
+
+[node name="carrrot" parent="." instance=ExtResource("3_cr08g")]
+position = Vector2(-384, 449)
+
+[node name="carrrot2" parent="carrrot" instance=ExtResource("3_cr08g")]
+position = Vector2(232, 0)
+scale = Vector2(1, 1)
+
+[node name="carrrot3" parent="carrrot" instance=ExtResource("3_cr08g")]
+position = Vector2(0, 254)
+scale = Vector2(1, 1)
+
+[node name="carrrot4" parent="carrrot" instance=ExtResource("3_cr08g")]
+position = Vector2(232, 254)
+scale = Vector2(1, 1)
+
+[node name="cabbage" parent="." instance=ExtResource("4_an68s")]
+position = Vector2(-73, 443)
+
+[node name="cabbage2" parent="cabbage" instance=ExtResource("4_an68s")]
+position = Vector2(138, 0)
+
+[node name="cabbage3" parent="cabbage" instance=ExtResource("4_an68s")]
+position = Vector2(0, 130)
+
+[node name="cabbage4" parent="cabbage" instance=ExtResource("4_an68s")]
+position = Vector2(138, 130)
+
+[node name="beet" parent="." instance=ExtResource("6_upkwc")]
+position = Vector2(253, 446)
+
+[node name="beet2" parent="beet" instance=ExtResource("6_upkwc")]
+position = Vector2(135, 0)
+
+[node name="beet3" parent="beet" instance=ExtResource("6_upkwc")]
+position = Vector2(0, 135)
+
+[node name="beet4" parent="beet" instance=ExtResource("6_upkwc")]
+position = Vector2(135, 135)
+
+[node name="tomato" parent="." instance=ExtResource("7_bc7b5")]
+position = Vector2(-393, 135)
+
+[node name="tomato2" parent="tomato" instance=ExtResource("7_bc7b5")]
+position = Vector2(125, 0)
+
+[node name="tomato3" parent="tomato" instance=ExtResource("7_bc7b5")]
+position = Vector2(0, 128)
+
+[node name="tomato4" parent="tomato" instance=ExtResource("7_bc7b5")]
+position = Vector2(125, 128)
+
+[node name="black_farmland" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(-327, 172)
+crop_nodes = Array[NodePath]([NodePath("../tomato"), NodePath("../tomato/tomato2"), NodePath("../tomato/tomato3"), NodePath("../tomato/tomato4")])
+unlock_cost = 10
+
+[node name="corn" parent="." instance=ExtResource("9_bc7b5")]
+position = Vector2(-70, 136)
+
+[node name="corn2" parent="corn" instance=ExtResource("9_bc7b5")]
+position = Vector2(140, -2)
+
+[node name="corn3" parent="corn" instance=ExtResource("9_bc7b5")]
+position = Vector2(0, 130)
+
+[node name="corn4" parent="corn" instance=ExtResource("9_bc7b5")]
+position = Vector2(140, 130)
+
+[node name="black_farmland2" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(0, 172)
+crop_nodes = Array[NodePath]([NodePath("../corn"), NodePath("../corn/corn2"), NodePath("../corn/corn3"), NodePath("../corn/corn4")])
+unlock_cost = 20
+
+[node name="pumpkin" parent="." instance=ExtResource("14_dougy")]
+position = Vector2(263, 126)
+
+[node name="pumpkin2" parent="pumpkin" instance=ExtResource("14_dougy")]
+position = Vector2(131, 0)
+
+[node name="pumpkin3" parent="pumpkin" instance=ExtResource("14_dougy")]
+position = Vector2(0, 130)
+
+[node name="pumpkin4" parent="pumpkin" instance=ExtResource("14_dougy")]
+position = Vector2(131, 130)
+
+[node name="black_farmland3" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(327, 172)
+crop_nodes = Array[NodePath]([NodePath("../pumpkin"), NodePath("../pumpkin/pumpkin2"), NodePath("../pumpkin/pumpkin3"), NodePath("../pumpkin/pumpkin4")])
+
+[node name="onion" parent="." instance=ExtResource("15_gsobk")]
+position = Vector2(-402, -188)
+
+[node name="onion2" parent="onion" instance=ExtResource("15_gsobk")]
+position = Vector2(145, 0)
+
+[node name="onion3" parent="onion" instance=ExtResource("15_gsobk")]
+position = Vector2(0, 140)
+
+[node name="onion4" parent="onion" instance=ExtResource("15_gsobk")]
+position = Vector2(145, 140)
+
+[node name="black_farmland4" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(-327, -137)
+crop_nodes = Array[NodePath]([NodePath("../onion"), NodePath("../onion/onion2"), NodePath("../onion/onion3"), NodePath("../onion/onion4")])
+unlock_cost = 40
+
+[node name="brocoli" parent="." instance=ExtResource("15_vexct")]
+position = Vector2(-68, -197)
+
+[node name="brocoli2" parent="brocoli" instance=ExtResource("15_vexct")]
+position = Vector2(138, 0)
+
+[node name="brocoli3" parent="brocoli" instance=ExtResource("15_vexct")]
+position = Vector2(0, 145)
+
+[node name="brocoli4" parent="brocoli" instance=ExtResource("15_vexct")]
+position = Vector2(138, 145)
+
+[node name="black_farmland5" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(0, -137)
+crop_nodes = Array[NodePath]([NodePath("../brocoli"), NodePath("../brocoli/brocoli2"), NodePath("../brocoli/brocoli3"), NodePath("../brocoli/brocoli4")])
+unlock_cost = 50
+
+[node name="cat" parent="." instance=ExtResource("16_vexct")]
+position = Vector2(263, -196)
+
+[node name="cat2" parent="cat" instance=ExtResource("16_vexct")]
+position = Vector2(132, 0)
+
+[node name="cat3" parent="cat" instance=ExtResource("16_vexct")]
+position = Vector2(0, 140)
+
+[node name="cat4" parent="cat" instance=ExtResource("16_vexct")]
+position = Vector2(132, 140)
+
+[node name="black_farmland6" parent="." instance=ExtResource("12_bc7b5")]
+position = Vector2(327, -137)
+crop_nodes = Array[NodePath]([NodePath("../cat"), NodePath("../cat/cat2"), NodePath("../cat/cat3"), NodePath("../cat/cat4")])
+unlock_cost = 60
+
+[node name="Home" type="Sprite2D" parent="."]
+position = Vector2(0, 702)
+texture = ExtResource("7_knayt")
+
+[node name="MissingBoard" type="Sprite2D" parent="."]
+position = Vector2(-246, 702)
+texture = ExtResource("8_pk03l")
+
+[node name="StoreHouse" type="Sprite2D" parent="."]
+position = Vector2(246, 702)
+texture = ExtResource("9_37jpc")
+
+[node name="CoinLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.326
+anchor_top = -0.741
+anchor_right = -0.194
+anchor_bottom = -0.634
+offset_left = -379.0
+offset_top = -481.0
+offset_right = -218.0
+offset_bottom = -412.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+horizontal_alignment = 2
+script = ExtResource("3_vpb0a")

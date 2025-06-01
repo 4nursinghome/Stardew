@@ -1,38 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://3snpw04ba815"]
+[gd_scene load_steps=5 format=3 uid="uid://3snpw04ba815"]
 
 [ext_resource type="Script" uid="uid://bfralr5ofs7kk" path="res://scenes/fightingScene/scenes/dialogue.gd" id="1_jwyou"]
-[ext_resource type="Texture2D" uid="uid://cwgnkhtb2ey7m" path="res://scenes/fightingScene/field1.png" id="2_bfpow"]
 [ext_resource type="Texture2D" uid="uid://bermmfhmpx75k" path="res://scenes/fightingScene/char2.png" id="3_fyky8"]
 [ext_resource type="Texture2D" uid="uid://c4d5ri8cv6adb" path="res://scenes/fightingScene/char1.png" id="4_fyky8"]
 
 [sub_resource type="Theme" id="Theme_3n4vj"]
 
 [node name="dialogue" type="Control"]
+show_behind_parent = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jwyou")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(228, 581)
-scale = Vector2(2.04297, 1.90365)
-texture = ExtResource("2_bfpow")
-
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
+offset_left = -5.0
 offset_top = 953.0
-offset_right = 1080.0
-offset_bottom = 1678.0
+offset_right = 1084.0
+offset_bottom = 1568.0
+rotation = 0.0034236
 
 [node name="Text" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 111.0
-offset_top = 193.0
-offset_right = 966.0
-offset_bottom = 639.0
+offset_left = 95.626
+offset_top = 182.674
+offset_right = 950.626
+offset_bottom = 529.674
 focus_mode = 1
 theme = SubResource("Theme_3n4vj")
 theme_type_variation = &"HeaderLarge"
@@ -51,6 +50,7 @@ text = "enemy
 "
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+visible = false
 show_behind_parent = true
 layout_mode = 0
 offset_left = 577.0
@@ -62,6 +62,7 @@ expand_mode = 1
 flip_h = true
 
 [node name="TextureRect2" type="TextureRect" parent="Panel"]
+visible = false
 show_behind_parent = true
 layout_mode = 0
 offset_top = -436.0

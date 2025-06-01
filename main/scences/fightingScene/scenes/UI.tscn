@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://biswpsiujryww"]
+[gd_scene load_steps=5 format=3 uid="uid://biswpsiujryww"]
 
 [ext_resource type="Script" uid="uid://ckgaswr5u07ih" path="res://scenes/fightingScene/scenes/UI.gd" id="1_g6l6n"]
 [ext_resource type="Texture2D" uid="uid://beonov6dfby5y" path="res://scenes/fightingScene/healthBar.png" id="3_p2vst"]
+[ext_resource type="Texture2D" uid="uid://t7qypnrono7" path="res://scenes/fightingScene/UI/IMG_2208.jpg" id="4_2vosv"]
 [ext_resource type="Texture2D" uid="uid://cahfigo141hg3" path="res://scenes/fightingScene/skill_pallet.png" id="4_ua6yw"]
-[ext_resource type="Texture2D" uid="uid://objlp4cngu7k" path="res://scenes/fightingScene/emptyheathbar.png" id="5_na42q"]
-[ext_resource type="Texture2D" uid="uid://b1wiyka5w30q8" path="res://scenes/fightingScene/UI/IMG_2167.PNG" id="5_p2vst"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -25,31 +24,25 @@ texture = ExtResource("4_ua6yw")
 [node name="player_healthBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 90.0
-offset_top = 1230.0
+offset_top = 1108.0
 offset_right = 682.0
-offset_bottom = 1405.0
+offset_bottom = 1283.0
 scale = Vector2(0.8, 0.4)
 fill_mode = 1
 nine_patch_stretch = true
 texture_under = ExtResource("3_p2vst")
-texture_progress = ExtResource("5_na42q")
+texture_progress = ExtResource("4_2vosv")
 tint_over = Color(1, 0, 0, 1)
 
 [node name="enemy_healthBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 228.0
-offset_top = 436.0
-offset_right = 887.0
-offset_bottom = 490.0
+offset_left = 246.0
+offset_top = 455.0
+offset_right = 905.0
+offset_bottom = 530.0
 tooltip_text = "the wong next door
 "
 fill_mode = 1
 nine_patch_stretch = true
 texture_under = ExtResource("3_p2vst")
-texture_progress = ExtResource("5_na42q")
-
-[node name="Nomorl_Acctack" type="Sprite2D" parent="."]
-position = Vector2(187, 1495)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_p2vst")
-hframes = 3
+texture_progress = ExtResource("4_2vosv")

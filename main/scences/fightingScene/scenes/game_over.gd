@@ -9,5 +9,6 @@ func _ready() :
 func on_restart_button_pressed():
 	emit_signal("restart","fight")
 func on_back_to_main_pressed():
+	skillStats.Lose()
+	print("skill st",skillStats.Lose())
 	emit_signal("back_to_main_pressed","home")
-	

@@ -1,38 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://digrbv6u1skfa"]
+[gd_scene load_steps=10 format=3 uid="uid://digrbv6u1skfa"]
 
 [ext_resource type="Script" uid="uid://c0c37ds3w7prk" path="res://scenes/fightingScene/scenes/background.gd" id="1_i7s6n"]
 [ext_resource type="Texture2D" uid="uid://bphgxtu76o3ds" path="res://scenes/fightingScene/backgrounds/background001.png" id="2_lfylx"]
 [ext_resource type="Texture2D" uid="uid://cechxl7fiu73o" path="res://scenes/fightingScene/backgrounds/background002.PNG" id="3_1sxu3"]
 [ext_resource type="Texture2D" uid="uid://w3hvlcaiu6kq" path="res://scenes/fightingScene/backgrounds/background003.png" id="4_jhjmq"]
 [ext_resource type="Texture2D" uid="uid://o2bdiwefqogy" path="res://scenes/fightingScene/backgrounds/background004.png" id="5_qu5ps"]
+[ext_resource type="Texture2D" uid="uid://d1pug4w6stcpu" path="res://scenes/fightingScene/backgrounds/background005.png" id="6_fad8r"]
+[ext_resource type="Texture2D" uid="uid://c7egg1m20a324" path="res://scenes/fightingScene/backgrounds/background006.PNG" id="7_pbln8"]
+[ext_resource type="Texture2D" uid="uid://db6hmo5ffyh0" path="res://scenes/fightingScene/backgrounds/background007.PNG" id="8_e5wer"]
+[ext_resource type="Texture2D" uid="uid://br771elen4nbp" path="res://scenes/fightingScene/backgrounds/background008.PNG" id="9_b2t5a"]
 
 [node name="background" type="Node2D"]
 script = ExtResource("1_i7s6n")
 
-[node name="background1" type="Sprite2D" parent="."]
+[node name="background2" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(-25, -283)
 scale = Vector2(1.10645, 1.30208)
 texture = ExtResource("2_lfylx")
 centered = false
 
-[node name="background2" type="Sprite2D" parent="."]
+[node name="background3" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(-25, -283)
 scale = Vector2(1.10645, 1.30208)
 texture = ExtResource("3_1sxu3")
 centered = false
 
-[node name="background3" type="Sprite2D" parent="."]
+[node name="background4" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(-25, -283)
 scale = Vector2(1.10645, 1.30208)
 texture = ExtResource("4_jhjmq")
 centered = false
 
-[node name="background4" type="Sprite2D" parent="."]
+[node name="background5" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(-25, -283)
 scale = Vector2(1.10645, 1.30208)
 texture = ExtResource("5_qu5ps")
+centered = false
+
+[node name="background6" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-25, -283)
+scale = Vector2(1.10645, 1.30208)
+texture = ExtResource("6_fad8r")
+centered = false
+
+[node name="background7" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-25, -283)
+scale = Vector2(1.10645, 1.30208)
+texture = ExtResource("7_pbln8")
+centered = false
+
+[node name="background8" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-25, -283)
+scale = Vector2(1.10645, 1.30208)
+texture = ExtResource("8_e5wer")
+centered = false
+
+[node name="background9" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-25, -283)
+scale = Vector2(1.10645, 1.30208)
+texture = ExtResource("9_b2t5a")
 centered = false

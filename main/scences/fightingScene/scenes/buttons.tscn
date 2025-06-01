@@ -1,33 +1,39 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq1gx33bjko34"]
+[gd_scene load_steps=14 format=3 uid="uid://cq1gx33bjko34"]
 
 [ext_resource type="Script" uid="uid://x712baqrrihm" path="res://scenes/fightingScene/scenes/buttons.gd" id="1_l81uu"]
 [ext_resource type="Script" uid="uid://bqyk6f7t62j0q" path="res://scenes/fightingScene/scenes/skill1_button.gd" id="2_q03lg"]
-[ext_resource type="Texture2D" uid="uid://khag8siuml2k" path="res://scenes/fightingScene/skill1.jpg" id="2_q21lg"]
 [ext_resource type="Texture2D" uid="uid://dgi2nimyejihm" path="res://scenes/fightingScene/escape.png" id="3_3p1pc"]
-[ext_resource type="Texture2D" uid="uid://bmas7ehc0hv82" path="res://scenes/fightingScene/ultimate.png" id="3_tvki0"]
+[ext_resource type="Texture2D" uid="uid://b1wiyka5w30q8" path="res://scenes/fightingScene/UI/skill.PNG" id="3_38tvd"]
 [ext_resource type="Script" uid="uid://baugixev4petr" path="res://scenes/fightingScene/scenes/escape_button.gd" id="4_s1xhx"]
 [ext_resource type="Script" uid="uid://gieknguqlnqt" path="res://scenes/fightingScene/scenes/ult_button.gd" id="6_x68a6"]
+[ext_resource type="Texture2D" uid="uid://ddy08u60607e4" path="res://scenes/fightingScene/UI/Ult.PNG" id="7_bv0nl"]
+[ext_resource type="Texture2D" uid="uid://bv5tfq0kqigul" path="res://scenes/fightingScene/UI/medic.PNG" id="8_bv0nl"]
+[ext_resource type="Script" uid="uid://xcatbk8mfy1t" path="res://scenes/fightingScene/scenes/special_button.gd" id="8_onx6q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvki0"]
-size = Vector2(888.424, 913.187)
+[sub_resource type="CircleShape2D" id="CircleShape2D_onx6q"]
+radius = 585.445
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yg274"]
 radius = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q4wf3"]
-radius = 119.017
+radius = 125.144
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onx6q"]
+radius = 104.0
+height = 208.0
 
 [node name="buttons" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1080.0
 offset_bottom = 1680.0
-mouse_filter = 1
+mouse_filter = 2
 mouse_force_pass_scroll_events = false
 script = ExtResource("1_l81uu")
 
 [node name="skill1Button" type="Area2D" parent="."]
-position = Vector2(-333, 302)
+position = Vector2(-352, 288)
 scale = Vector2(0.178969, 0.176306)
 disable_mode = 2
 script = ExtResource("2_q03lg")
@@ -36,18 +42,20 @@ metadata/_edit_group_ = true
 
 [node name="skill1" type="Sprite2D" parent="skill1Button"]
 position = Vector2(2950.24, 6579.49)
-scale = Vector2(0.903955, 0.912993)
-texture = ExtResource("2_q21lg")
+scale = Vector2(2.7, 2.727)
+texture = ExtResource("3_38tvd")
+hframes = 3
 
 [node name="skill1_body" type="CollisionShape2D" parent="skill1Button"]
 position = Vector2(2947.44, 6582.32)
-shape = SubResource("RectangleShape2D_tvki0")
+shape = SubResource("CircleShape2D_onx6q")
 
 [node name="skill1_cooldown" type="Timer" parent="skill1Button"]
 wait_time = 5.0
 one_shot = true
 
 [node name="escapeButton" type="Area2D" parent="."]
+position = Vector2(32, 72)
 script = ExtResource("4_s1xhx")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
@@ -62,17 +70,34 @@ scale = Vector2(0.0864258, 0.0942383)
 texture = ExtResource("3_3p1pc")
 
 [node name="ULTButton" type="Area2D" parent="."]
-position = Vector2(368, 64)
+position = Vector2(344, 40)
 script = ExtResource("6_x68a6")
-metadata/_edit_group_ = true
 
 [node name="ULT" type="Sprite2D" parent="ULTButton"]
 position = Vector2(546.765, 1393.25)
-scale = Vector2(0.247947, 0.247947)
-texture = ExtResource("3_tvki0")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_bv0nl")
+hframes = 3
 
 [node name="ULT_body" type="CollisionShape2D" parent="ULTButton"]
 position = Vector2(547, 1394)
 shape = SubResource("CircleShape2D_q4wf3")
 
 [node name="ULT_cooldown" type="Timer" parent="ULTButton"]
+
+[node name="specialButton" type="Area2D" parent="."]
+position = Vector2(0, 64)
+script = ExtResource("8_onx6q")
+metadata/_edit_group_ = true
+
+[node name="special" type="Sprite2D" parent="specialButton"]
+position = Vector2(482, 1388.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_bv0nl")
+hframes = 3
+
+[node name="special_body" type="CollisionShape2D" parent="specialButton"]
+position = Vector2(491, 1392)
+shape = SubResource("CapsuleShape2D_onx6q")
+
+[node name="special_cooldown" type="Timer" parent="specialButton"]
